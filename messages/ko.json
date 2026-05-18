@@ -1,0 +1,165 @@
+{
+  "nav": {
+    "diagnosis": "적성 진단",
+    "aiTools": "AI 도구",
+    "community": "커뮤니티",
+    "startBtn": "무료 진단받기",
+    "quizBtn": "진단하기",
+    "logout": "로그아웃"
+  },
+  "landing": {
+    "badge": "AI 개발자 적성 진단",
+    "headline1": "나에게 맞는",
+    "headline2": "개발분야를",
+    "headline3": "AI로 분석한다면?",
+    "sub": "21가지 질문으로 맞춤 개발 분야, 학습 로드맵,\n추천 강의까지 한번에 받아보세요",
+    "cta": "무료로 진단받기 →",
+    "ctaSub": "무료 · 2분 소요 · 회원가입 불필요",
+    "howBadge": "How it works",
+    "howTitle": "3단계로 완성되는\n나만의 로드맵",
+    "steps": [
+      { "num": "01", "title": "질문에 답하기", "desc": "목표, 성향, 현재 상황 등 나를 파악하는 21가지 질문에 답해요" },
+      { "num": "02", "title": "AI 분석", "desc": "Claude AI가 답변을 분석해 가장 맞는 개발 분야를 추천해드려요" },
+      { "num": "03", "title": "로드맵 받기", "desc": "단계별 학습 계획과 검증된 강의를 바로 받아볼 수 있어요" }
+    ],
+    "fieldBadge": "개발 분야",
+    "fieldTitle": "어떤 개발자가\n되고 싶으신가요?",
+    "whyBadge": "Why StarDev",
+    "whyTitle": "왜 StarDev인가요?",
+    "whyDesc": "StarDev는 \"개발자가 되고 싶은데 어디서 시작해야 할지 모르겠다\"는\n수많은 입문자들의 고민에서 시작됐어요.",
+    "stats": [
+      { "value": "무료", "label": "완전 무료 서비스" },
+      { "value": "2분", "label": "평균 소요 시간" },
+      { "value": "6개", "label": "분야별 맞춤 분석" }
+    ],
+    "reasons": [
+      { "icon": "🌱", "title": "입문자를 위해 만들었어요", "desc": "유튜브와 인터넷을 아무리 찾아봐도 용어조차 낯설었던 경험, StarDev는 그 막막함을 없애기 위해 만들어졌어요." },
+      { "icon": "⭐", "title": "StarDev에서 영감을 받았어요", "desc": "Star(별)처럼 빛나는 개발자(Dev)가 되길 바라는 마음을 담아, 입문자 한 명 한 명의 가능성을 믿고 응원해요." },
+      { "icon": "🚀", "title": "성장하는 플랫폼이 될게요", "desc": "AI 도구 정리부터 개발자 커뮤니티까지, 입문자와 현직 개발자 모두에게 유용한 공간으로 계속 발전할게요." }
+    ],
+    "ctaTitle": "지금 바로\n시작해보세요",
+    "ctaSub2": "2분이면 나만의 개발 로드맵이 완성돼요"
+  },
+  "fields": [
+    { "name": "프론트엔드", "desc": "사용자가 보는 화면을 만들어요" },
+    { "name": "백엔드", "desc": "서버와 데이터베이스를 다뤄요" },
+    { "name": "AI / ML", "desc": "인공지능 모델을 설계하고 훈련해요" },
+    { "name": "데이터 분석", "desc": "데이터로 인사이트를 뽑아내요" },
+    { "name": "DevOps", "desc": "인프라와 배포를 자동화해요" },
+    { "name": "풀스택", "desc": "프론트부터 백엔드까지 혼자 만들어요" }
+  ],
+  "aiTools": {
+    "badge": "AI Tools",
+    "title": "AI Tool 모음",
+    "desc": "현직 개발자와 크리에이터 모두를 위해 검증된 AI 도구를 카테고리별로 정리했어요.",
+    "categories": [
+      {
+        "category": "코딩 보조 AI",
+        "desc": "개발 생산성을 높여주는 AI 코딩 도구",
+        "items": [
+          { "icon": "⚡", "name": "Cursor", "desc": "AI가 내장된 코드 에디터. Claude·GPT-4 기반으로 코드 작성·수정·디버깅을 대화하듯 처리해요.", "tag": "무료/유료", "url": "https://cursor.sh" },
+          { "icon": "🐙", "name": "GitHub Copilot", "desc": "GitHub + OpenAI가 만든 코드 자동완성 도구. VS Code, JetBrains 등 대부분의 에디터 지원.", "tag": "유료", "url": "https://github.com/features/copilot" },
+          { "icon": "🖥️", "name": "Claude Code", "desc": "Anthropic의 Claude를 터미널에서 직접 사용하는 AI 개발 도구. 파일 수정·코드 리뷰·배포까지.", "tag": "유료", "url": "https://claude.ai/code" },
+          { "icon": "🌊", "name": "Codeium", "desc": "무료 코드 자동완성 AI. 70개 이상의 언어 지원, VS Code·JetBrains 플러그인 제공.", "tag": "무료", "url": "https://codeium.com" },
+          { "icon": "🧠", "name": "Tabnine", "desc": "로컬 실행 가능한 AI 코딩 어시스턴트. 코드가 외부로 나가지 않아 보안이 중요한 팀에 적합.", "tag": "무료/유료", "url": "https://tabnine.com" }
+        ]
+      },
+      {
+        "category": "AI 개발 플랫폼 / API",
+        "desc": "AI 기능을 서비스에 직접 통합할 수 있는 API",
+        "items": [
+          { "icon": "🔮", "name": "Anthropic Claude API", "desc": "Claude 모델을 API로 직접 호출. 문서 분석·코딩·RAG·에이전트 등 다양한 AI 기능 구현 가능.", "tag": "유료", "url": "https://anthropic.com" },
+          { "icon": "🤖", "name": "OpenAI API", "desc": "GPT-4o·DALL-E·Whisper 등 OpenAI 모델을 API로 호출. 가장 많은 레퍼런스 보유.", "tag": "유료", "url": "https://platform.openai.com" },
+          { "icon": "🤗", "name": "Hugging Face", "desc": "오픈소스 AI 모델 허브. 수십만 개의 모델을 무료로 사용하거나 직접 파인튜닝 가능.", "tag": "무료/유료", "url": "https://huggingface.co" },
+          { "icon": "▲", "name": "Vercel AI SDK", "desc": "Next.js·React에서 AI 스트리밍을 쉽게 구현하는 SDK. Claude·GPT·Gemini 모두 지원.", "tag": "무료", "url": "https://sdk.vercel.ai" },
+          { "icon": "🔗", "name": "LangChain", "desc": "LLM 기반 애플리케이션 개발 프레임워크. RAG, 에이전트, 체인 구성을 쉽게 만들 수 있어요.", "tag": "무료", "url": "https://langchain.com" }
+        ]
+      },
+      {
+        "category": "AI 검색 / 리서치",
+        "desc": "개발 공부와 문서 탐색에 유용한 AI 도구",
+        "items": [
+          { "icon": "🔍", "name": "Perplexity AI", "desc": "웹을 실시간 검색하며 답변하는 AI. 최신 라이브러리 문서·에러 해결에 특히 유용.", "tag": "무료/유료", "url": "https://perplexity.ai" },
+          { "icon": "💡", "name": "Phind", "desc": "개발자 전용 AI 검색 엔진. Stack Overflow·GitHub·공식 문서를 종합해 코딩 질문에 답변.", "tag": "무료", "url": "https://phind.com" },
+          { "icon": "🌐", "name": "You.com", "desc": "AI 검색 + 코딩 모드 탑재. 코드 생성·디버깅·설명을 검색하듯 사용 가능.", "tag": "무료/유료", "url": "https://you.com" }
+        ]
+      },
+      {
+        "category": "AI 이미지 / 디자인",
+        "desc": "프론트엔드·UI 개발자에게 유용한 AI 디자인 도구",
+        "items": [
+          { "icon": "🎨", "name": "Midjourney", "desc": "현존 최고 수준의 AI 이미지 생성 도구. 서비스 썸네일·일러스트·브랜딩 소재 제작에 활용.", "tag": "유료", "url": "https://midjourney.com" },
+          { "icon": "🖼️", "name": "DALL-E 3", "desc": "OpenAI의 이미지 생성 AI. ChatGPT Plus에서 바로 사용 가능. 텍스트 포함 이미지 강점.", "tag": "유료", "url": "https://openai.com/dall-e-3" },
+          { "icon": "✦", "name": "v0 by Vercel", "desc": "텍스트로 React UI 컴포넌트를 생성하는 AI. 프론트엔드 개발자의 디자인 작업을 크게 줄여줘요.", "tag": "무료/유료", "url": "https://v0.dev" },
+          { "icon": "🎭", "name": "Adobe Firefly", "desc": "Adobe 생태계에 통합된 AI 이미지 생성. Photoshop·Illustrator와 연동해 실무에서 바로 활용.", "tag": "유료", "url": "https://firefly.adobe.com" }
+        ]
+      },
+      {
+        "category": "AI 영상 / 미디어",
+        "desc": "유튜브·영상 제작·콘텐츠 크리에이터를 위한 AI 도구",
+        "items": [
+          { "icon": "🎬", "name": "Runway ML", "desc": "텍스트·이미지로 영상을 생성하는 AI. Gen-3 모델로 고품질 영상 제작, 크리에이터 필수 도구.", "tag": "무료/유료", "url": "https://runwayml.com" },
+          { "icon": "🐦", "name": "Pika Labs", "desc": "텍스트나 이미지를 영상으로 변환하는 AI. 쉬운 사용법으로 유튜브 쇼츠·릴스 제작에 인기.", "tag": "무료/유료", "url": "https://pika.art" },
+          { "icon": "🗣️", "name": "ElevenLabs", "desc": "AI 음성 생성 도구. 한국어 포함 29개 언어 지원. 내레이션·팟캐스트·유튜브 보이스오버에 활용.", "tag": "무료/유료", "url": "https://elevenlabs.io" },
+          { "icon": "✂️", "name": "Descript", "desc": "영상 편집을 텍스트로 하는 AI 에디터. 자막 자동 생성·불필요한 침묵 자동 제거·클립 정리.", "tag": "무료/유료", "url": "https://descript.com" },
+          { "icon": "🧑‍💼", "name": "HeyGen", "desc": "AI 아바타가 대신 영상을 찍어주는 도구. 내 목소리·얼굴을 학습해 다양한 언어로 영상 제작.", "tag": "유료", "url": "https://heygen.com" },
+          { "icon": "🌊", "name": "Kling AI", "desc": "중국 Kuaishou가 만든 고품질 AI 영상 생성 도구. Runway 대비 무료 크레딧이 많아 진입장벽 낮음.", "tag": "무료/유료", "url": "https://klingai.com" },
+          { "icon": "📝", "name": "Kapwing", "desc": "온라인 AI 영상 편집 툴. 자막 자동 생성·배경 제거·영상 요약 등 크리에이터 편의 기능 다수.", "tag": "무료/유료", "url": "https://kapwing.com" }
+        ]
+      },
+      {
+        "category": "AI 생산성 / 문서화",
+        "desc": "개발 문서·협업·노트 작업을 도와주는 AI 도구",
+        "items": [
+          { "icon": "📓", "name": "Notion AI", "desc": "Notion 안에서 문서 작성·요약·번역을 AI가 도와줘요. 팀 위키·개발 문서화에 최적.", "tag": "유료", "url": "https://notion.so" },
+          { "icon": "💬", "name": "Claude.ai", "desc": "Anthropic의 대화형 AI. 긴 문서 분석·코드 리뷰·기획서 작성 등 복잡한 작업에 탁월.", "tag": "무료/유료", "url": "https://claude.ai" },
+          { "icon": "📊", "name": "Gamma", "desc": "AI가 프레젠테이션을 자동 생성해주는 도구. 개발 발표자료·투자 피치덱 제작에 활용.", "tag": "무료/유료", "url": "https://gamma.app" }
+        ]
+      }
+    ]
+  },
+  "community": {
+    "badge": "Community",
+    "title": "같이 성장하는\n개발자 커뮤니티",
+    "desc": "입문자부터 현직 개발자까지. 질문하고 답하고 함께 성장하는 공간을 만들고 있어요.",
+    "soon": "커뮤니티 오픈 준비 중이에요",
+    "comingSoon": "곧 오픈 예정",
+    "previewBadge": "Preview",
+    "previewTitle": "이런 공간이\n만들어질 예정이에요",
+    "emailPlaceholder": "이메일 주소 입력",
+    "emailBtn": "알림 신청",
+    "emailSub": "스팸 없음 · 언제든 취소 가능",
+    "ctaTitle": "오픈 알림을\n받아보세요",
+    "ctaDesc": "커뮤니티가 오픈되면 가장 먼저 알려드려요",
+    "topics": [
+      {
+        "category": "입문자 공간",
+        "icon": "🌱",
+        "boards": [
+          { "name": "무엇이든 물어보세요", "desc": "개발 용어부터 환경 설정까지, 어떤 질문이든 환영해요" },
+          { "name": "학습 인증 / 스터디 로그", "desc": "오늘 배운 것을 공유하고 함께 성장해요" },
+          { "name": "로드맵 공유", "desc": "StarDev 진단 결과와 나만의 학습 플랜을 나눠요" }
+        ]
+      },
+      {
+        "category": "현직 개발자 공간",
+        "icon": "💻",
+        "boards": [
+          { "name": "AI 도구 리뷰", "desc": "실무에서 써본 AI 도구 솔직 후기를 공유해요" },
+          { "name": "커리어 / 이직 이야기", "desc": "면접 경험, 연봉 협상, 이직 팁을 나눠요" },
+          { "name": "코드 리뷰 요청", "desc": "내 코드를 공유하고 피드백을 받아요" }
+        ]
+      },
+      {
+        "category": "함께 성장",
+        "icon": "🚀",
+        "boards": [
+          { "name": "사이드 프로젝트 모집", "desc": "같이 만들 팀원을 찾거나 프로젝트를 소개해요" },
+          { "name": "스터디 모집", "desc": "함께 공부할 스터디 그룹을 만들어요" },
+          { "name": "멘토링 / 멘티 매칭", "desc": "경험을 나누고 싶은 멘토와 배우고 싶은 멘티를 연결해요" }
+        ]
+      }
+    ]
+  },
+  "footer": "StarDev · AI 개발자 적성 진단"
+}

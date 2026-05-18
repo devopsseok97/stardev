@@ -1,0 +1,165 @@
+{
+  "nav": {
+    "diagnosis": "Aptitude Test",
+    "aiTools": "AI Tools",
+    "community": "Community",
+    "startBtn": "Start Free",
+    "quizBtn": "Take Quiz",
+    "logout": "Log out"
+  },
+  "landing": {
+    "badge": "AI Developer Aptitude Test",
+    "headline1": "Find Your",
+    "headline2": "Perfect Dev",
+    "headline3": "Field with AI",
+    "sub": "Answer 21 questions and get your personalized\ndevelopment field, learning roadmap, and course recommendations.",
+    "cta": "Start for Free →",
+    "ctaSub": "Free · 2 min · No sign-up required",
+    "howBadge": "How it works",
+    "howTitle": "Your roadmap in\n3 simple steps",
+    "steps": [
+      { "num": "01", "title": "Answer 21 Questions", "desc": "Tell us about your goals, personality, and current situation" },
+      { "num": "02", "title": "AI Analysis", "desc": "Claude AI analyzes your answers and recommends the best dev field for you" },
+      { "num": "03", "title": "Get Your Roadmap", "desc": "Receive a step-by-step learning plan and verified course recommendations" }
+    ],
+    "fieldBadge": "Dev Fields",
+    "fieldTitle": "What kind of\ndeveloper do you want to be?",
+    "whyBadge": "Why StarDev",
+    "whyTitle": "Why StarDev?",
+    "whyDesc": "StarDev was born from the frustration of not knowing\nwhere to start as a beginner developer.",
+    "stats": [
+      { "value": "Free", "label": "Completely free" },
+      { "value": "2 min", "label": "Average time" },
+      { "value": "6", "label": "Fields analyzed" }
+    ],
+    "reasons": [
+      { "icon": "🌱", "title": "Built for beginners", "desc": "We know the feeling of searching for hours and still being confused. StarDev is built to remove that barrier." },
+      { "icon": "⭐", "title": "Inspired by StarDev", "desc": "Star — shine bright as a developer. Dev — build the future. We believe in the potential of every beginner." },
+      { "icon": "🚀", "title": "A growing platform", "desc": "From AI tool directories to a developer community — we're building the ultimate resource hub for developers worldwide." }
+    ],
+    "ctaTitle": "Start right now",
+    "ctaSub2": "Your personalized roadmap is ready in 2 minutes"
+  },
+  "fields": [
+    { "name": "Frontend", "desc": "Build the interfaces users see and interact with" },
+    { "name": "Backend", "desc": "Power apps with servers and databases" },
+    { "name": "AI / ML", "desc": "Design and train intelligent models" },
+    { "name": "Data Analytics", "desc": "Extract insights from data" },
+    { "name": "DevOps", "desc": "Automate infrastructure and deployments" },
+    { "name": "Full Stack", "desc": "Build complete apps from front to back" }
+  ],
+  "aiTools": {
+    "badge": "AI Tools",
+    "title": "AI Tool Hub",
+    "desc": "Curated AI tools for developers and creators — organized by category to help you work smarter.",
+    "categories": [
+      {
+        "category": "Coding AI",
+        "desc": "AI coding tools to supercharge your development productivity",
+        "items": [
+          { "icon": "⚡", "name": "Cursor", "desc": "AI-powered code editor built on Claude & GPT-4. Write, edit, and debug code through natural conversation.", "tag": "Free/Paid", "url": "https://cursor.sh" },
+          { "icon": "🐙", "name": "GitHub Copilot", "desc": "Code autocomplete tool by GitHub + OpenAI. Supports VS Code, JetBrains, and most popular editors.", "tag": "Paid", "url": "https://github.com/features/copilot" },
+          { "icon": "🖥️", "name": "Claude Code", "desc": "Anthropic's Claude directly in your terminal. File edits, code reviews, and deployments — all in one.", "tag": "Paid", "url": "https://claude.ai/code" },
+          { "icon": "🌊", "name": "Codeium", "desc": "Free AI code autocomplete supporting 70+ languages. VS Code & JetBrains plugins available.", "tag": "Free", "url": "https://codeium.com" },
+          { "icon": "🧠", "name": "Tabnine", "desc": "AI coding assistant that runs locally. Code stays on your machine — ideal for teams with strict security requirements.", "tag": "Free/Paid", "url": "https://tabnine.com" }
+        ]
+      },
+      {
+        "category": "AI Dev Platforms / APIs",
+        "desc": "APIs to integrate AI capabilities directly into your products",
+        "items": [
+          { "icon": "🔮", "name": "Anthropic Claude API", "desc": "Call Claude models via API. Build document analysis, coding assistants, RAG pipelines, and agents.", "tag": "Paid", "url": "https://anthropic.com" },
+          { "icon": "🤖", "name": "OpenAI API", "desc": "Access GPT-4o, DALL-E, and Whisper via API. The most widely referenced AI platform.", "tag": "Paid", "url": "https://platform.openai.com" },
+          { "icon": "🤗", "name": "Hugging Face", "desc": "Open-source AI model hub with hundreds of thousands of models. Use for free or fine-tune your own.", "tag": "Free/Paid", "url": "https://huggingface.co" },
+          { "icon": "▲", "name": "Vercel AI SDK", "desc": "SDK for easy AI streaming in Next.js & React. Supports Claude, GPT, and Gemini out of the box.", "tag": "Free", "url": "https://sdk.vercel.ai" },
+          { "icon": "🔗", "name": "LangChain", "desc": "Framework for building LLM-powered apps. Easily compose RAG pipelines, agents, and chains.", "tag": "Free", "url": "https://langchain.com" }
+        ]
+      },
+      {
+        "category": "AI Search / Research",
+        "desc": "AI tools for learning, documentation, and problem solving",
+        "items": [
+          { "icon": "🔍", "name": "Perplexity AI", "desc": "AI that searches the web in real-time. Especially useful for finding the latest library docs and debugging errors.", "tag": "Free/Paid", "url": "https://perplexity.ai" },
+          { "icon": "💡", "name": "Phind", "desc": "AI search engine built for developers. Combines Stack Overflow, GitHub, and official docs to answer coding questions.", "tag": "Free", "url": "https://phind.com" },
+          { "icon": "🌐", "name": "You.com", "desc": "AI search with a coding mode built in. Generate, debug, and explain code — all from a search interface.", "tag": "Free/Paid", "url": "https://you.com" }
+        ]
+      },
+      {
+        "category": "AI Image / Design",
+        "desc": "AI design tools for frontend and UI developers",
+        "items": [
+          { "icon": "🎨", "name": "Midjourney", "desc": "One of the best AI image generators available. Perfect for thumbnails, illustrations, and branding assets.", "tag": "Paid", "url": "https://midjourney.com" },
+          { "icon": "🖼️", "name": "DALL-E 3", "desc": "OpenAI's image generation AI. Available directly in ChatGPT Plus. Strong at generating images with text.", "tag": "Paid", "url": "https://openai.com/dall-e-3" },
+          { "icon": "✦", "name": "v0 by Vercel", "desc": "Generate React UI components from text descriptions. Dramatically reduces design work for frontend devs.", "tag": "Free/Paid", "url": "https://v0.dev" },
+          { "icon": "🎭", "name": "Adobe Firefly", "desc": "AI image generation integrated into the Adobe ecosystem. Works directly in Photoshop & Illustrator.", "tag": "Paid", "url": "https://firefly.adobe.com" }
+        ]
+      },
+      {
+        "category": "AI Video / Media",
+        "desc": "AI tools for YouTubers, video creators, and content producers",
+        "items": [
+          { "icon": "🎬", "name": "Runway ML", "desc": "Generate video from text or images using AI. Gen-3 model produces high-quality footage — a must-have for creators.", "tag": "Free/Paid", "url": "https://runwayml.com" },
+          { "icon": "🐦", "name": "Pika Labs", "desc": "Convert text or images into video. Easy to use and popular for YouTube Shorts and Instagram Reels.", "tag": "Free/Paid", "url": "https://pika.art" },
+          { "icon": "🗣️", "name": "ElevenLabs", "desc": "AI voice generation tool. Supports 29 languages including Korean. Great for narration, podcasts, and voiceovers.", "tag": "Free/Paid", "url": "https://elevenlabs.io" },
+          { "icon": "✂️", "name": "Descript", "desc": "AI video editor that lets you edit video like a text document. Auto captions, silence removal, and clip trimming.", "tag": "Free/Paid", "url": "https://descript.com" },
+          { "icon": "🧑‍💼", "name": "HeyGen", "desc": "Create videos with an AI avatar that looks and sounds like you. Produce content in multiple languages effortlessly.", "tag": "Paid", "url": "https://heygen.com" },
+          { "icon": "🌊", "name": "Kling AI", "desc": "High-quality AI video generator by Kuaishou. More free credits than Runway — low barrier to entry.", "tag": "Free/Paid", "url": "https://klingai.com" },
+          { "icon": "📝", "name": "Kapwing", "desc": "Online AI video editor. Auto captions, background removal, video summarization — packed with creator features.", "tag": "Free/Paid", "url": "https://kapwing.com" }
+        ]
+      },
+      {
+        "category": "AI Productivity / Docs",
+        "desc": "AI tools for documentation, collaboration, and note-taking",
+        "items": [
+          { "icon": "📓", "name": "Notion AI", "desc": "AI-assisted writing, summarization, and translation inside Notion. Ideal for team wikis and dev docs.", "tag": "Paid", "url": "https://notion.so" },
+          { "icon": "💬", "name": "Claude.ai", "desc": "Anthropic's conversational AI. Excellent for long document analysis, code reviews, and complex planning tasks.", "tag": "Free/Paid", "url": "https://claude.ai" },
+          { "icon": "📊", "name": "Gamma", "desc": "AI that auto-generates presentations. Great for dev talk slides and investor pitch decks.", "tag": "Free/Paid", "url": "https://gamma.app" }
+        ]
+      }
+    ]
+  },
+  "community": {
+    "badge": "Community",
+    "title": "Grow together\nwith developers",
+    "desc": "From beginners to senior devs — a space to ask questions, share knowledge, and grow together.",
+    "soon": "Community is coming soon",
+    "comingSoon": "Opening soon",
+    "previewBadge": "Preview",
+    "previewTitle": "Here's what\nwe're building",
+    "emailPlaceholder": "Enter your email",
+    "emailBtn": "Notify me",
+    "emailSub": "No spam · Unsubscribe anytime",
+    "ctaTitle": "Get notified\nwhen we launch",
+    "ctaDesc": "Be the first to know when the community opens",
+    "topics": [
+      {
+        "category": "Beginner Space",
+        "icon": "🌱",
+        "boards": [
+          { "name": "Ask Anything", "desc": "From dev terms to environment setup — any question is welcome here" },
+          { "name": "Study Logs", "desc": "Share what you learned today and grow together" },
+          { "name": "Roadmap Sharing", "desc": "Share your StarDev results and personal learning plans" }
+        ]
+      },
+      {
+        "category": "Pro Developer Space",
+        "icon": "💻",
+        "boards": [
+          { "name": "AI Tool Reviews", "desc": "Honest reviews of AI tools from real-world development use" },
+          { "name": "Career & Job Hunting", "desc": "Interview tips, salary negotiation, and job change advice" },
+          { "name": "Code Review Requests", "desc": "Share your code and get feedback from the community" }
+        ]
+      },
+      {
+        "category": "Grow Together",
+        "icon": "🚀",
+        "boards": [
+          { "name": "Side Project Teams", "desc": "Find teammates or introduce your project to the community" },
+          { "name": "Study Groups", "desc": "Form a group to learn and build together" },
+          { "name": "Mentor & Mentee Matching", "desc": "Connect experienced mentors with those eager to learn" }
+        ]
+      }
+    ]
+  },
+  "footer": "StarDev · AI Developer Aptitude Test"
+}
