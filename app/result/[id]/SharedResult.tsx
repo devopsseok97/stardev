@@ -12,14 +12,6 @@ const FIELD_ICONS: Record<string, string> = {
   "인프라/DevOps": "🛠️",
 };
 
-const FIELD_ACCENT: Record<string, string> = {
-  "프론트엔드": "from-pink-500 to-rose-600",
-  "백엔드": "from-blue-500 to-indigo-600",
-  "AI/ML": "from-purple-500 to-violet-600",
-  "데이터 분석": "from-orange-500 to-amber-600",
-  "풀스택": "from-emerald-500 to-teal-600",
-  "인프라/DevOps": "from-slate-400 to-gray-600",
-};
 
 type RoadmapStep = { step: number; title: string; duration: string; description: string };
 type Course = { name: string; type: string; description: string; url: string };
@@ -42,7 +34,6 @@ export default function SharedResult({ result, resultId }: { result: Result; res
     : `${process.env.NEXT_PUBLIC_APP_URL ?? ""}/result/${resultId}`;
 
   const icon = FIELD_ICONS[result.field] ?? "💻";
-  const accent = FIELD_ACCENT[result.field] ?? "from-purple-500 to-blue-600";
 
   const handleCopy = async () => {
     try {
@@ -75,7 +66,7 @@ export default function SharedResult({ result, resultId }: { result: Result; res
         <p className="text-center text-white/30 text-xs uppercase tracking-widest">친구가 공유한 결과</p>
 
         {/* 결과 헤더 */}
-        <div className={`bg-gradient-to-br ${accent} p-8 text-center`}>
+        <div className="bg-white/5 border border-white/10 p-8 text-center">
           <div className="text-6xl mb-4">{icon}</div>
           <p className="text-white/70 text-xs font-semibold uppercase tracking-widest mb-2">이 사람에게 맞는 분야</p>
           <h1 className="text-4xl font-black mb-4">{result.field}</h1>

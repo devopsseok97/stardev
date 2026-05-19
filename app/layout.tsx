@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "StarDev · AI 개발자 적성 진단",
     description: "21가지 질문으로 나에게 맞는 개발 분야와 학습 로드맵을 AI가 찾아드려요.",
-    url: "https://devmatch-gilt.vercel.app",
+    url: process.env.NEXT_PUBLIC_APP_URL ?? "https://stardev.vercel.app",
     siteName: "StarDev",
     type: "website",
     locale: "ko_KR",
