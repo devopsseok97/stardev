@@ -124,6 +124,175 @@ export default function GuidanceDetailPage() {
             <p className="text-white/80 leading-relaxed">{guide.tip}</p>
           </div>
 
+          {/* Shortcuts (VS Code) */}
+          {guide.shortcuts && (
+            <div>
+              <p className="text-xs uppercase tracking-[0.3em] text-purple-400 mb-8">꼭 외울 단축키</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-px" style={{ background: "rgba(255,255,255,0.06)" }}>
+                {guide.shortcuts.map((s) => (
+                  <div key={s.title} className="flex gap-4 p-5 bg-black">
+                    <span className="text-2xl flex-shrink-0">{s.icon}</span>
+                    <div>
+                      <p className="font-black text-white text-sm mb-1">{s.title}</p>
+                      <p className="text-white/40 text-xs">{s.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Use Cases (AI 코딩) */}
+          {guide.useCases && (
+            <div>
+              <p className="text-xs uppercase tracking-[0.3em] text-purple-400 mb-8">이렇게 써먹으세요</p>
+              <div className="space-y-px" style={{ background: "rgba(255,255,255,0.06)" }}>
+                {guide.useCases.map((u) => (
+                  <div key={u.title} className="p-6 bg-black">
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="text-2xl">{u.icon}</span>
+                      <p className="font-black text-white">{u.title}</p>
+                    </div>
+                    <div className="bg-white/[0.03] border border-white/8 rounded p-4 mb-3 font-mono text-sm text-purple-300 whitespace-pre-wrap">
+                      {u.prompt}
+                    </div>
+                    <p className="text-sm text-white/40">{u.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Commands (Git) */}
+          {guide.commands && (
+            <div>
+              <p className="text-xs uppercase tracking-[0.3em] text-purple-400 mb-8">자주 쓰는 명령어</p>
+              <div className="space-y-px" style={{ background: "rgba(255,255,255,0.06)" }}>
+                {guide.commands.map((c) => (
+                  <div key={c.cmd} className="flex gap-4 p-4 bg-black items-center">
+                    <code className="text-purple-400 font-mono text-sm flex-shrink-0 min-w-[200px]">{c.cmd}</code>
+                    <p className="text-white/40 text-sm">{c.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Before/After (Googling) */}
+          {guide.beforeAfter && (
+            <div>
+              <p className="text-xs uppercase tracking-[0.3em] text-purple-400 mb-8">이렇게 검색하세요</p>
+              <div className="space-y-4">
+                {guide.beforeAfter.map((item, i) => (
+                  <div key={i} className="border border-white/10 p-6">
+                    <div className="flex flex-col sm:flex-row gap-3 mb-4">
+                      <div className="flex-1 p-3 bg-red-950/30 border border-red-500/20 rounded">
+                        <p className="text-xs text-red-400 mb-1 uppercase tracking-wider">❌ 이렇게 말고</p>
+                        <p className="text-white/60 text-sm">{item.bad}</p>
+                      </div>
+                      <div className="flex-1 p-3 bg-green-950/30 border border-green-500/20 rounded">
+                        <p className="text-xs text-green-400 mb-1 uppercase tracking-wider">✅ 이렇게</p>
+                        <p className="text-white/70 text-sm font-mono">{item.good}</p>
+                      </div>
+                    </div>
+                    <p className="text-white/40 text-sm">— {item.why}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Sites (Googling) */}
+          {guide.sites && (
+            <div>
+              <p className="text-xs uppercase tracking-[0.3em] text-purple-400 mb-8">믿을 수 있는 사이트</p>
+              <div className="space-y-px" style={{ background: "rgba(255,255,255,0.06)" }}>
+                {guide.sites.map((s) => (
+                  <div key={s.name} className="flex gap-4 p-5 bg-black">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-1">
+                        <p className="font-black text-white">{s.name}</p>
+                        <span className="text-xs border border-white/15 text-white/30 px-2 py-0.5">{s.tag}</span>
+                      </div>
+                      {s.url && <p className="text-white/30 text-xs font-mono mb-1">{s.url}</p>}
+                      <p className="text-white/40 text-sm">{s.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Env Setup (Deploy) */}
+          {guide.envSetup && (
+            <div>
+              <p className="text-xs uppercase tracking-[0.3em] text-purple-400 mb-8">환경변수 설정</p>
+              <div className="border border-white/10 p-6">
+                <p className="font-black text-white mb-2">{guide.envSetup.title}</p>
+                <p className="text-white/40 text-sm mb-4">{guide.envSetup.desc}</p>
+                <div className="space-y-2">
+                  {guide.envSetup.steps.map((step, i) => (
+                    <div key={i} className="flex gap-3 text-sm">
+                      <span className="text-purple-400 flex-shrink-0">{i + 1}.</span>
+                      <span className="text-white/50">{step}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Domains (Deploy) */}
+          {guide.domains && (
+            <div>
+              <p className="text-xs uppercase tracking-[0.3em] text-purple-400 mb-8">도메인 옵션</p>
+              <div className="space-y-px" style={{ background: "rgba(255,255,255,0.06)" }}>
+                {guide.domains.map((d) => (
+                  <div key={d.name} className="flex items-center justify-between p-5 bg-black">
+                    <div>
+                      <p className="font-bold text-white text-sm">{d.name}</p>
+                      <p className="text-white/30 text-xs font-mono">{d.example}</p>
+                    </div>
+                    <span className="text-xs border border-white/15 text-white/40 px-3 py-1">{d.price}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Examples (AI Explain) */}
+          {guide.examples && (
+            <div>
+              <p className="text-xs uppercase tracking-[0.3em] text-purple-400 mb-8">상황별 질문법</p>
+              <div className="space-y-4">
+                {guide.examples.map((e, i) => (
+                  <div key={i} className="border border-white/10 p-6">
+                    <p className="text-purple-400 text-sm font-bold mb-3">📌 {e.situation}</p>
+                    <div className="bg-white/[0.03] border border-white/8 rounded p-4 mb-3 font-mono text-sm text-white/70 whitespace-pre-wrap">
+                      {e.prompt}
+                    </div>
+                    <p className="text-white/30 text-xs">💡 {e.tip}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Extra Tips */}
+          {guide.extraTips && (
+            <div>
+              <p className="text-xs uppercase tracking-[0.3em] text-purple-400 mb-8">더 잘 쓰는 법</p>
+              <div className="space-y-2">
+                {guide.extraTips.map((tip, i) => (
+                  <div key={i} className="flex gap-3 p-4 border border-white/10">
+                    <span className="text-white/20 flex-shrink-0">—</span>
+                    <p className="text-white/50 text-sm leading-relaxed">{tip}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* FAQ */}
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-purple-400 mb-8">자주 묻는 질문</p>

@@ -10,6 +10,15 @@ export type FAQ = {
   linkLabel?: string;
 };
 
+export type Shortcut = { icon: string; title: string; desc: string };
+export type UseCase = { icon: string; title: string; prompt: string; desc: string };
+export type Command = { cmd: string; desc: string };
+export type BeforeAfter = { bad: string; good: string; why: string };
+export type Site = { name: string; url?: string; desc: string; tag: string };
+export type EnvSetup = { title: string; desc: string; steps: string[] };
+export type Domain = { name: string; example: string; price: string };
+export type Example = { situation: string; prompt: string; tip: string };
+
 export type GuideContent = {
   slug: string;
   icon: string;
@@ -22,6 +31,15 @@ export type GuideContent = {
   tip: string;
   tipLabel: string;
   faqs: FAQ[];
+  shortcuts?: Shortcut[];
+  useCases?: UseCase[];
+  commands?: Command[];
+  beforeAfter?: BeforeAfter[];
+  sites?: Site[];
+  envSetup?: EnvSetup;
+  domains?: Domain[];
+  examples?: Example[];
+  extraTips?: string[];
 };
 
 export const GUIDES: GuideContent[] = [
@@ -74,6 +92,14 @@ export const GUIDES: GuideContent[] = [
         linkSlug: "github",
         linkLabel: "GitHub 연동하는 법 →",
       },
+    ],
+    shortcuts: [
+      { icon: "⌨️", title: "Ctrl+` (백틱)", desc: "터미널 열기. 코드 실행할 때 씀." },
+      { icon: "🔍", title: "Ctrl+P", desc: "파일 빠르게 열기. 파일명 타이핑하면 바로 이동." },
+      { icon: "✨", title: "Ctrl+Shift+P", desc: "명령어 팔레트. 뭐든 검색 가능." },
+      { icon: "📋", title: "Alt+클릭", desc: "커서 여러 개 동시에. 같은 내용 여러 줄 한번에 수정." },
+      { icon: "📦", title: "Ctrl+D", desc: "같은 단어 선택. 변수명 일괄 변경할 때 유용." },
+      { icon: "🎨", title: "Shift+Alt+F", desc: "코드 자동 정렬. 지저분한 코드 한 번에 정리." },
     ],
   },
   {
@@ -128,6 +154,50 @@ export const GUIDES: GuideContent[] = [
         linkLabel: "VS Code에 AI 붙이는 법 →",
       },
     ],
+    useCases: [
+      {
+        icon: "🐛",
+        title: "오류 해결",
+        prompt: "이 오류가 왜 나는지, 어떻게 고치는지 알려줘:\n\n[오류 메시지 붙여넣기]",
+        desc: "에러 메시지 전체를 복붙하면 원인과 해결책을 바로 알려줘요. 구글링보다 10배 빨라요.",
+      },
+      {
+        icon: "🤔",
+        title: "코드 이해",
+        prompt: "이 코드가 뭘 하는 건지 쉽게 설명해줘:\n\n[코드 붙여넣기]",
+        desc: "강의에서 이해 안 되는 코드가 나오면 그냥 복붙하면 돼요.",
+      },
+      {
+        icon: "✍️",
+        title: "코드 작성",
+        prompt: "Next.js에서 로그인 폼 컴포넌트 만들어줘. 이메일이랑 비밀번호 입력창, 제출 버튼 있어야 해.",
+        desc: "만들고 싶은 걸 말로 설명하면 코드를 짜줘요. 최대한 구체적으로 설명할수록 좋아요.",
+      },
+      {
+        icon: "♻️",
+        title: "코드 개선",
+        prompt: "이 코드 더 깔끔하게 리팩토링해줘:\n\n[코드 붙여넣기]",
+        desc: "작동은 하는데 지저분한 코드를 정리해달라고 하면 돼요.",
+      },
+      {
+        icon: "📚",
+        title: "개념 질문",
+        prompt: "useState랑 useEffect 차이가 뭔지 예시 코드로 설명해줘",
+        desc: "용어나 개념이 헷갈릴 때 편하게 물어보면 돼요. 구글보다 훨씬 친절해요.",
+      },
+      {
+        icon: "🔍",
+        title: "코드 리뷰",
+        prompt: "이 코드에서 문제가 될 수 있는 부분이 있어? 있으면 어떻게 고치면 좋을지 알려줘:\n\n[코드 붙여넣기]",
+        desc: "완성한 코드를 검토받고 싶을 때 써요. 보안이나 성능 문제도 잡아줘요.",
+      },
+    ],
+    extraTips: [
+      "짧게 말하지 말고 배경 설명을 같이 해주세요. '오류 났어' 보다 'Next.js 14에서 fetch 쓸 때 이 오류 났어'가 훨씬 정확한 답을 받아요.",
+      "답이 맘에 안 들면 '더 간단하게', '초보자한테 설명하듯', '다른 방법 없어?'라고 다시 물어보세요.",
+      "한 번에 너무 많이 물어보지 마세요. 질문 하나씩 해결하는 게 대화가 꼬이지 않아요.",
+      "AI가 틀릴 수 있어요. 특히 최신 라이브러리 버전 관련 답은 공식 문서로 교차 확인하세요.",
+    ],
   },
   {
     slug: "github",
@@ -176,6 +246,16 @@ export const GUIDES: GuideContent[] = [
         linkSlug: "deploy",
         linkLabel: "무료 배포하는 법 →",
       },
+    ],
+    commands: [
+      { cmd: "git init", desc: "현재 폴더를 Git 저장소로 만들기" },
+      { cmd: "git add .", desc: "변경된 파일 전부 스테이징" },
+      { cmd: 'git commit -m "메시지"', desc: "변경사항 저장 (스냅샷 찍기)" },
+      { cmd: "git push", desc: "GitHub에 올리기" },
+      { cmd: "git pull", desc: "GitHub에서 최신 버전 받아오기" },
+      { cmd: "git status", desc: "현재 상태 확인" },
+      { cmd: "git log", desc: "커밋 히스토리 보기" },
+      { cmd: "git clone [URL]", desc: "GitHub 저장소 내 컴퓨터로 복제" },
     ],
   },
   {
@@ -228,6 +308,61 @@ export const GUIDES: GuideContent[] = [
         a: "날짜 확인이 중요해요. 5년 이상 된 답변은 지금 방식이랑 다를 수 있어요. 오래된 답변을 찾으면 Claude한테 '이 방법이 지금도 유효한지'를 확인해보세요.",
       },
     ],
+    beforeAfter: [
+      {
+        bad: "리액트 오류 해결",
+        good: "React cannot read properties of undefined reading map",
+        why: "오류 메시지를 영어 그대로 검색하면 Stack Overflow에서 정확한 답이 나와요.",
+      },
+      {
+        bad: "자바스크립트 배열 중복 제거",
+        good: "javascript remove duplicates from array",
+        why: "영어로 검색하면 결과가 10배 많아요. MDN, Stack Overflow 같은 신뢰할 수 있는 사이트가 상단에 떠요.",
+      },
+      {
+        bad: "CSS 가운데 정렬 안될때",
+        good: "css flexbox center align items justify-content",
+        why: "기술 키워드를 영어로 포함하면 공식 문서나 정확한 예시 코드가 나와요.",
+      },
+      {
+        bad: "넥스트제이에스 이미지 최적화",
+        good: "Next.js Image component optimization site:nextjs.org",
+        why: "site: 연산자로 공식 문서만 검색하면 가장 정확한 정보를 얻을 수 있어요.",
+      },
+    ],
+    sites: [
+      {
+        name: "Stack Overflow",
+        url: "stackoverflow.com",
+        desc: "오류 해결의 성지예요. 영어지만 오류 메시지 그대로 검색하면 대부분 답이 있어요.",
+        tag: "오류 해결",
+      },
+      {
+        name: "MDN Web Docs",
+        url: "developer.mozilla.org/ko",
+        desc: "HTML, CSS, JavaScript 공식 레퍼런스예요. 한국어도 돼요. 가장 신뢰할 수 있는 문서예요.",
+        tag: "공식 문서",
+      },
+      {
+        name: "공식 문서",
+        url: "docs.각라이브러리.com",
+        desc: "React, Next.js, Tailwind 등 쓰는 기술 공식 문서가 최고예요. 블로그보다 공식 문서 먼저 보세요.",
+        tag: "공식 문서",
+      },
+      {
+        name: "YouTube",
+        desc: "기술 개념 이해할 때 유튜브 영상이 글보다 빨리 이해돼요. 영어 채널이면 자막 켜서 봐요.",
+        tag: "영상 학습",
+      },
+    ],
+    extraTips: [
+      "오류 메시지는 영어 그대로 복붙해서 검색하세요.",
+      "검색 결과에 Stack Overflow가 있으면 바로 클릭하세요.",
+      "블로그 글은 날짜 확인하세요. 1년 이상 된 글은 정보가 구식일 수 있어요.",
+      "공식 문서가 있으면 블로그보다 공식 문서를 먼저 보세요.",
+      "이해가 안 되는 검색 결과는 AI한테 번역이랑 설명 같이 부탁하면 돼요.",
+      "site:stackoverflow.com 또는 site:nextjs.org 처럼 특정 사이트만 검색할 수 있어요.",
+    ],
   },
   {
     slug: "deploy",
@@ -277,6 +412,20 @@ export const GUIDES: GuideContent[] = [
         linkLabel: "GitHub 사용법 보기 →",
       },
     ],
+    envSetup: {
+      title: "환경변수 설정하는 법",
+      desc: "API 키 같은 민감한 정보는 코드에 직접 넣으면 안 돼요.",
+      steps: [
+        "Vercel 프로젝트 대시보드 → Settings",
+        "Environment Variables 탭 클릭",
+        "Key (예: ANTHROPIC_API_KEY), Value 입력",
+        "Save → Redeploy",
+      ],
+    },
+    domains: [
+      { name: "Vercel 기본 도메인", example: "myproject.vercel.app", price: "무료" },
+      { name: "커스텀 도메인 연결", example: "mysite.com", price: "도메인 구입비 연 1~3만원" },
+    ],
   },
   {
     slug: "ai-explain",
@@ -325,6 +474,44 @@ export const GUIDES: GuideContent[] = [
         linkSlug: "ai-coding",
         linkLabel: "AI로 오류 해결하는 법 →",
       },
+    ],
+    examples: [
+      {
+        situation: "강의 보다가 이해 안 되는 코드가 나올 때",
+        prompt: "이 코드가 뭘 하는 건지 초등학생도 이해할 수 있게 설명해줘:\n\n[코드 붙여넣기]",
+        tip: "'초등학생도 이해할 수 있게' 라고 하면 진짜 쉽게 설명해줘요.",
+      },
+      {
+        situation: "용어가 이해 안 될 때",
+        prompt: "클로저(closure)가 뭔지 실생활 비유로 설명해줘. 코드 예시도 같이 보여줘.",
+        tip: "'실생활 비유로' 라고 하면 추상적인 개념도 쉽게 이해돼요.",
+      },
+      {
+        situation: "코드 한 줄씩 이해하고 싶을 때",
+        prompt: "이 코드 각 줄이 뭘 하는지 주석으로 달아서 설명해줘:\n\n[코드 붙여넣기]",
+        tip: "주석 달아달라고 하면 코드 흐름을 한눈에 볼 수 있어요.",
+      },
+      {
+        situation: "왜 이렇게 쓰는지 이해가 안 될 때",
+        prompt: "React에서 useEffect를 왜 쓰는 건지, 안 쓰면 어떻게 되는지 비교해서 설명해줘.",
+        tip: "왜 쓰는지 이해하면 외우지 않아도 자연스럽게 기억돼요.",
+      },
+      {
+        situation: "비슷한 개념들이 헷갈릴 때",
+        prompt: "var, let, const 차이를 표로 정리해줘. 언제 뭘 써야 하는지도 알려줘.",
+        tip: "표로 정리해달라고 하면 비교가 한눈에 들어와요.",
+      },
+      {
+        situation: "더 깊이 이해하고 싶을 때",
+        prompt: "Promise가 내부적으로 어떻게 동작하는지 단계별로 설명해줘.",
+        tip: "내부 동작을 이해하면 응용력이 훨씬 높아져요.",
+      },
+    ],
+    extraTips: [
+      "모르는 게 당연해요. 개발자도 매일 검색하고 물어봐요.",
+      "AI한테 물어보는 건 부끄러운 게 아니에요. 오히려 빠르게 배우는 방법이에요.",
+      "한 번 설명 듣고 이해 안 되면 '더 쉽게', '다른 방식으로' 다시 물어보세요.",
+      "이해한 내용을 직접 코드로 써보는 게 진짜 실력이 되는 과정이에요.",
     ],
   },
 ];
