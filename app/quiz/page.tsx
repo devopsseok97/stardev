@@ -144,7 +144,7 @@ export default function QuizPage() {
             {currentIndex > 0 && (
               <button
                 onClick={() => setCurrentIndex(currentIndex - 1)}
-                className="text-white/30 hover:text-white/70 transition-colors text-sm flex items-center gap-1"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white text-black text-sm font-bold hover:bg-gray-100 active:scale-95 transition-all duration-150"
               >
                 ← 이전
               </button>

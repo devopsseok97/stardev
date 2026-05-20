@@ -24,7 +24,7 @@ export default function FieldDetailPage() {
         <div className="max-w-5xl mx-auto relative z-10">
           <button
             onClick={() => router.back()}
-            className="text-white/30 text-sm hover:text-white/70 transition-colors mb-10 flex items-center gap-2"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-white/20 text-white/60 text-sm font-medium hover:bg-white hover:text-black active:scale-95 transition-all duration-200 mb-10"
           >
             ← 돌아가기
           </button>
