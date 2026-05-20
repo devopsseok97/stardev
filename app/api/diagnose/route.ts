@@ -1,11 +1,10 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { NextRequest, NextResponse } from "next/server";
-import { supabaseAdmin } from "@/lib/supabase-admin";
 import { getCoursesByField } from "@/lib/courses";
 
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
-const SYSTEM_PROMPT = `당신은 개발자 커리어 전문 상담사입니다. 사용자의 20가지 응답을 종합 분석해서 JSON 형식으로만 답변해주세요.
+const SYSTEM_PROMPT = `당신은 개발자 커리어 전문 상담사입니다. 사용자의 응답을 종합 분석해서 JSON 형식으로만 답변해주세요.
 
 분야별 추천 기준:
 - 프론트엔드: 시각적 결과물 선호, 디자인 감각, UX 관심, 사용자 화면 만들기 원함
@@ -67,20 +66,30 @@ export async function POST(req: NextRequest) {
       courses,
     };
 
-    // Supabase에 결과 저장 → 공유 URL용 ID 발급
-    const { data, error } = await supabaseAdmin
-      .from("results")
-      .insert(result)
-      .select("id")
-      .single();
+    // Supabase 저장 (실패해도 결과는 반환)
+    try {
+      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+      const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
-    if (error) {
-      console.error("Supabase 저장 오류:", error.message);
-      // 저장 실패해도 결과는 반환 (id 없이)
-      return NextResponse.json(result);
+      if (supabaseUrl && supabaseKey) {
+        const { createClient } = await import("@supabase/supabase-js");
+        const supabaseAdmin = createClient(supabaseUrl, supabaseKey);
+        const { data, error } = await supabaseAdmin
+          .from("results")
+          .insert(result)
+          .select("id")
+          .single();
+
+        if (!error && data?.id) {
+          return NextResponse.json({ ...result, id: data.id });
+        }
+        if (error) console.error("Supabase 저장 오류:", error.message);
+      }
+    } catch (dbErr) {
+      console.error("Supabase 초기화 오류:", dbErr);
     }
 
-    return NextResponse.json({ ...result, id: data.id });
+    return NextResponse.json(result);
   } catch (error: unknown) {
     const message = error instanceof Error ? error.message : String(error);
     console.error("API 오류 상세:", message);
