@@ -132,7 +132,17 @@ export default function QuizPage() {
 
       <div className="relative z-10 bg-white/5 border border-white/10 rounded-2xl w-full max-w-lg p-8 backdrop-blur-sm">
         <div className="flex items-center justify-between mb-6">
-          <span className="text-white font-black text-lg">★ StarDev</span>
+          <div className="flex items-center gap-3">
+            {currentIndex > 0 && (
+              <button
+                onClick={() => setCurrentIndex(currentIndex - 1)}
+                className="text-white/30 hover:text-white/70 transition-colors text-sm flex items-center gap-1"
+              >
+                ← 이전
+              </button>
+            )}
+            <span className="text-white font-black text-lg">★ StarDev</span>
+          </div>
           <span className="text-white/30 text-sm">{currentIndex + 1} / {questions.length}</span>
         </div>
 
