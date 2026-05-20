@@ -16,42 +16,36 @@ export type Course = {
 const COURSES: Record<string, Course[]> = {
   "프론트엔드": [
     {
-      name: "인프런 - HTML/CSS/JS 완성 패키지",
+      name: "프론트엔드 실전 로드맵: Zero to One (취업 가이드)",
       type: "유료",
-      description: "제로베이스부터 취업까지, 국내 최대 프론트엔드 강의",
-      url: `https://www.inflearn.com/roadmaps/39${UTM}`,
+      description: "입문부터 취업까지 한 번에, 실전 중심 프론트엔드 완성 로드맵",
+      url: "https://inf.run/19upS",
     },
     {
-      name: "노마드코더 - React 완성반",
+      name: "프론트엔드 마스터클래스",
       type: "유료",
-      description: "실전 프로젝트 중심, 영어+한국어 자막 제공",
-      url: `https://nomadcoders.co/react-for-beginners${UTM}`,
+      description: "HTML/CSS/JS/React를 실무 수준으로 끌어올리는 마스터클래스",
+      url: "https://inf.run/LkoU1",
     },
     {
-      name: "MDN Web Docs",
-      type: "무료",
-      description: "Mozilla 공식 웹 기술 레퍼런스, 가장 신뢰할 수 있는 문서",
-      url: `https://developer.mozilla.org/ko${UTM}`,
+      name: "[코드캠프] 부트캠프에서 만든 완벽한 프론트엔드 코스",
+      type: "유료",
+      description: "부트캠프 커리큘럼 그대로, 처음부터 포트폴리오까지",
+      url: "https://inf.run/qB9i4",
     },
   ],
   "백엔드": [
     {
-      name: "인프런 - 스프링 부트와 JPA 실무",
+      name: "스프링과 JPA 기반 웹 애플리케이션 개발",
       type: "유료",
-      description: "김영한님 강의, 국내 백엔드 취업 1위 커리큘럼",
-      url: `https://www.inflearn.com/course/ORM-JPA-Basic${UTM}`,
+      description: "국내 백엔드 취업 1위 커리큘럼, 실무 스프링+JPA 완성",
+      url: "https://inf.run/MntAj",
     },
     {
-      name: "패스트캠퍼스 - Node.js 서버 개발",
-      type: "유료",
-      description: "Express, TypeScript, DB 설계까지 실무 중심",
-      url: `https://fastcampus.co.kr/dev_online_nodeadv${UTM}`,
-    },
-    {
-      name: "The Odin Project",
+      name: "Salesforce APEX 실무",
       type: "무료",
-      description: "풀스택 웹 개발 무료 커리큘럼, 글로벌 인기 1위",
-      url: `https://www.theodinproject.com${UTM}`,
+      description: "글로벌 CRM 플랫폼 Salesforce 개발 실무, 무료로 시작",
+      url: "https://inf.run/Druc8",
     },
   ],
   "AI/ML": [
@@ -102,22 +96,22 @@ const COURSES: Record<string, Course[]> = {
   ],
   "풀스택": [
     {
-      name: "코드스테이츠 - 소프트웨어 엔지니어링 부트캠프",
+      name: "350개 개인앱 만들고 월급 7배 수익 달성하는 방법",
       type: "유료",
-      description: "6개월 풀스택, 취업 연계율 높은 국내 1위 부트캠프",
-      url: `https://www.codestates.com/course/software-engineering${UTM}`,
+      description: "앱 개발부터 실제 수익화까지, 혼자서 서비스를 완성하는 실전 강의",
+      url: "https://inf.run/RWM9t",
     },
     {
-      name: "노마드코더 - 풀스택 챌린지",
+      name: "AI 개발팀 운영 + 결제 수익화 웹서비스 런칭",
       type: "유료",
-      description: "Next.js + Prisma + TailwindCSS, 실전 프로젝트 중심",
-      url: `https://nomadcoders.co/fullstack-challenge${UTM}`,
+      description: "AI로 팀 운영하며 Next.js + 결제 연동까지, 실전 수익화 강의",
+      url: "https://inf.run/5xHbM",
     },
     {
-      name: "freeCodeCamp",
-      type: "무료",
-      description: "HTML부터 React까지 3000시간 무료 커리큘럼",
-      url: `https://www.freecodecamp.org${UTM}`,
+      name: "바이브코딩으로 월급의 10배 버는 기술",
+      type: "유료",
+      description: "AI 툴로 실제 수익을 만드는 실전 바이브코딩 강의",
+      url: "https://inf.run/sxJiP",
     },
   ],
   "인프라/DevOps": [
@@ -142,22 +136,22 @@ const COURSES: Record<string, Course[]> = {
   ],
   "게임": [
     {
+      name: "게임 프로그래머 입문 올인원: C++ & 자료구조 & 게임 서버",
+      type: "유료",
+      description: "C++부터 자료구조, 알고리즘, 게임 수학, 서버까지 게임 개발 전체를 한 번에",
+      url: "https://inf.run/fo1SQ",
+    },
+    {
       name: "Farm 온라인 게임 만들기 - 유니티 + AI 수익화",
       type: "무료",
       description: "유니티와 뒤끝서버로 온라인 게임을 처음부터 완성, AI 수익화까지",
       url: "https://inf.run/ek91o",
     },
     {
-      name: "인프런 - Unity 6 온라인 오목 게임 만들기",
+      name: "Unity WebGL 디지털트윈 프로젝트 실전",
       type: "유료",
-      description: "Unity + C# 서버로 멀티플레이 게임을 처음부터 끝까지 완성하는 실전 강의",
-      url: "https://inf.run/kFHsN",
-    },
-    {
-      name: "Unreal Engine 공식 학습 포털",
-      type: "무료",
-      description: "Unreal Engine 공식 무료 강의. 블루프린트부터 C++ 게임 개발까지",
-      url: "https://dev.epicgames.com/community/unreal-engine/learning",
+      description: "CAD 3D 자동 변환과 실시간 공간 생성, Unity 실전 프로젝트",
+      url: "https://inf.run/FCdMs",
     },
   ],
 };
