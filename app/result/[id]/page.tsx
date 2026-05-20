@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: `나는 ${result.field} 개발자 유형! | StarDev`,
       description: result.reason,
-      url: `${process.env.NEXT_PUBLIC_APP_URL ?? "https://devmatch-gilt.vercel.app"}/result/${id}`,
+      url: `${process.env.NEXT_PUBLIC_APP_URL ?? "https://stardev.kr"}/result/${id}`,
       siteName: "StarDev",
       type: "website",
     },
