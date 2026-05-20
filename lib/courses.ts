@@ -56,40 +56,28 @@ const COURSES: Record<string, Course[]> = {
   ],
   "AI/ML": [
     {
-      name: "하이퀄리티 AI 영상 올인원: 미드저니 & 런웨이",
-      type: "유료",
-      description: "AI 이미지·영상 생성 툴을 처음부터 끝까지, 크리에이터 필수 강의",
-      url: "https://inf.run/jCVvd",
-    },
-    {
-      name: "RAG 성능의 한계를 뚫는 인지 부하 관리 기술",
-      type: "유료",
-      description: "LLM 애플리케이션 성능을 극대화하는 RAG 심화 기술",
-      url: "https://inf.run/2CLef",
-    },
-    {
-      name: "AI 개발팀 운영 + 결제 수익화 웹서비스 런칭",
-      type: "유료",
-      description: "AI로 팀 운영하며 Next.js + 결제 연동까지, 실전 수익화 강의",
-      url: "https://inf.run/5xHbM",
-    },
-    {
-      name: "AI 기반 실전 보안 실습: 취약점 탐지부터 LLM 탈옥까지",
-      type: "유료",
-      description: "AI와 보안을 동시에 배우는 실전 해킹 방어 강의",
-      url: "https://inf.run/VQHXv",
-    },
-    {
-      name: "(기획자를 위한) LLM 애플리케이션 요구사항 분석",
+      name: "클로드로 시작하는 바이브코딩 입문부터 실전까지",
       type: "무료",
-      description: "LLM 앱 기획·분석 방법론, 무료로 배우는 AI 서비스 설계",
-      url: "https://inf.run/eXRfA",
+      description: "AI 코딩 도구 Claude로 코딩을 처음 배우는 입문자 최적 강의",
+      url: "https://inf.run/yDmA7",
     },
     {
-      name: "바닥부터 만드는 언리얼 에이전트",
+      name: "프롬프트 엔지니어링 완전 정복",
+      type: "무료",
+      description: "AI를 제대로 쓰는 핵심 기술, 프롬프트 설계부터 실전 활용까지",
+      url: "https://inf.run/LkvRN",
+    },
+    {
+      name: "바이브코딩으로 월급의 10배 버는 기술",
       type: "유료",
-      description: "Agent, Tool, MCP, Skill을 직접 구현하는 AI 에이전트 개발",
-      url: "https://inf.run/ixy9x",
+      description: "AI 툴로 실제 수익을 만드는 실전 바이브코딩 강의",
+      url: "https://inf.run/sxJiP",
+    },
+    {
+      name: "직장인을 위한 ChatGPT & 생성형 AI 업무 효율화",
+      type: "무료",
+      description: "AI 툴로 업무 생산성을 극대화하는 실용 강의",
+      url: "https://inf.run/fEEdN",
     },
   ],
   "데이터 분석": [
@@ -154,16 +142,16 @@ const COURSES: Record<string, Course[]> = {
   ],
   "게임": [
     {
+      name: "Farm 온라인 게임 만들기 - 유니티 + AI 수익화",
+      type: "무료",
+      description: "유니티와 뒤끝서버로 온라인 게임을 처음부터 완성, AI 수익화까지",
+      url: "https://inf.run/ek91o",
+    },
+    {
       name: "인프런 - Unity 6 온라인 오목 게임 만들기",
       type: "유료",
       description: "Unity + C# 서버로 멀티플레이 게임을 처음부터 끝까지 완성하는 실전 강의",
       url: "https://inf.run/kFHsN",
-    },
-    {
-      name: "Unity Learn (공식)",
-      type: "무료",
-      description: "Unity 공식 튜토리얼. 2D/3D 게임 입문부터 멀티플레이까지 무료 학습 가능",
-      url: "https://learn.unity.com",
     },
     {
       name: "Unreal Engine 공식 학습 포털",
