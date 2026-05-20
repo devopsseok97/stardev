@@ -276,6 +276,49 @@ export const FIELDS: FieldContent[] = [
       { step: 4, title: "완성 + 배포", desc: "실제 유저가 쓸 수 있는 서비스를 Vercel로 배포하고 공개해요." },
     ],
   },
+  {
+    slug: "game",
+    name: "게임",
+    icon: "🎮",
+    tagline: "사람들이 즐기는 게임을 직접 만드는 개발자",
+    description:
+      "게임 개발자는 Unity, Unreal 같은 엔진을 사용해 캐릭터, 배경, 게임 로직, 멀티플레이 등을 구현해요. 모바일 캐주얼 게임부터 콘솔 AAA 게임까지 영역이 넓고, 인디 개발자로 1인 출시도 가능해요. 결과물이 직접 즐길 수 있는 콘텐츠라는 게 가장 큰 매력이에요.",
+    doing: [
+      "Unity 또는 Unreal 엔진으로 게임 제작",
+      "캐릭터·오브젝트 동작 로직 구현 (C#/C++)",
+      "UI/UX, 인벤토리, 메뉴 시스템 구현",
+      "물리·충돌·애니메이션 처리",
+      "멀티플레이 서버 연동 및 동기화",
+      "게임 밸런싱 및 성능 최적화",
+    ],
+    skills: [
+      { name: "C# (Unity) 또는 C++ (Unreal)", level: "필수" },
+      { name: "Unity / Unreal Engine", level: "필수" },
+      { name: "수학 (벡터·행렬·물리)", level: "필수" },
+      { name: "Git / 버전 관리", level: "필수" },
+      { name: "셰이더 / 그래픽스 기초", level: "권장" },
+      { name: "네트워크 프로그래밍", level: "권장" },
+      { name: "Blender / 3D 모델링 기초", level: "권장" },
+    ],
+    salary: { junior: "3,000 ~ 4,500만원", mid: "4,500 ~ 7,000만원", senior: "7,000만원 ~" },
+    pros: [
+      "결과물이 직접 즐길 수 있는 콘텐츠라 성취감이 커요",
+      "글로벌 시장(Steam, App Store)이라 1인 인디 출시도 가능해요",
+      "Unity/Unreal 한 번 익히면 모바일·PC·콘솔까지 폭넓게 활용해요",
+    ],
+    cons: [
+      "수학·물리 기초가 필요해서 진입 장벽이 있어요",
+      "출시 임박 시 크런치(야근) 문화가 남아있는 회사가 있어요",
+      "인디 출시 시 IP를 띄우기까지 마케팅 부담이 커요",
+    ],
+    companies: ["넥슨", "엔씨소프트", "스마일게이트", "크래프톤", "펄어비스", "위메이드"],
+    roadmap: [
+      { step: 1, title: "C# + Unity 기초", desc: "C# 문법과 Unity 에디터 사용법을 익히고, 간단한 2D 게임을 하나 만들어봐요." },
+      { step: 2, title: "게임 로직 + 물리", desc: "캐릭터 이동, 충돌, 애니메이션, 점프 같은 핵심 인터랙션을 구현해요." },
+      { step: 3, title: "UI + 사운드 + 저장", desc: "메뉴, HUD, 사운드, 저장/로드까지 게임 한 사이클을 완성해요." },
+      { step: 4, title: "출시 + 포트폴리오", desc: "Steam/Google Play에 직접 출시하거나, 완성된 데모 영상을 포트폴리오로 정리해요." },
+    ],
+  },
 ];
 
 export function getField(slug: string): FieldContent | undefined {
@@ -286,11 +329,15 @@ export const FIELD_SLUG_MAP: Record<string, string> = {
   "프론트엔드": "frontend",
   "백엔드": "backend",
   "AI / ML": "ai-ml",
+  "AI/ML": "ai-ml",
   "데이터 분석": "data",
   "DevOps": "devops",
+  "인프라/DevOps": "devops",
   "풀스택": "fullstack",
+  "게임": "game",
   "Frontend": "frontend",
   "Backend": "backend",
   "Data Analytics": "data",
   "Full Stack": "fullstack",
+  "Game": "game",
 };

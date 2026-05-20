@@ -21,9 +21,6 @@ type Course = {
 type Result = {
   field: string;
   reason: string;
-  mbtiType?: string | null;
-  mbtiTitle?: string | null;
-  mbtiDesc?: string | null;
   roadmap: RoadmapStep[];
   courses: Course[];
 };
@@ -35,6 +32,7 @@ const FIELD_GRADIENT: Record<string, string> = {
   "데이터 분석": "from-orange-500 to-amber-600",
   "풀스택": "from-emerald-500 to-teal-700",
   "인프라/DevOps": "from-slate-500 to-gray-700",
+  "게임": "from-fuchsia-600 to-pink-700",
 };
 
 const FIELD_ICONS: Record<string, string> = {
@@ -44,6 +42,7 @@ const FIELD_ICONS: Record<string, string> = {
   "데이터 분석": "📊",
   "풀스택": "🚀",
   "인프라/DevOps": "🛠️",
+  "게임": "🎮",
 };
 
 export default function ResultPage({
@@ -108,42 +107,6 @@ export default function ResultPage({
             <p className="text-white/80 leading-relaxed text-lg max-w-xl">{result.reason}</p>
           </div>
         </div>
-
-        {/* MBTI 개발자 성향 카드 */}
-        {result.mbtiType && result.mbtiTitle && (
-          <div className="bg-black border border-white/10 p-10" style={{ borderTop: "none" }}>
-            <p className="text-xs uppercase tracking-[0.3em] text-purple-400 mb-2">Developer MBTI</p>
-            <h2 className="text-2xl font-black text-white mb-8">나의 개발자 성향 타입</h2>
-            <div className="flex flex-col sm:flex-row gap-6 items-start">
-              {/* MBTI 코드 뱃지 */}
-              <div className="flex-shrink-0 flex flex-col items-center justify-center w-28 h-28 border border-purple-500/40 bg-purple-500/10">
-                <span className="text-3xl font-black text-white tracking-widest">{result.mbtiType}</span>
-              </div>
-              <div className="flex-1">
-                <h3 className="text-xl font-black text-white mb-3">{result.mbtiTitle}</h3>
-                {result.mbtiDesc && (
-                  <p className="text-white/50 leading-relaxed">{result.mbtiDesc}</p>
-                )}
-                {/* MBTI 글자 설명 */}
-                <div className="flex gap-2 mt-5 flex-wrap">
-                  {result.mbtiType.split("").map((letter, i) => {
-                    const desc: Record<string, string> = {
-                      I: "내향형", E: "외향형",
-                      N: "직관형", S: "현실형",
-                      T: "사고형", F: "감정형",
-                      J: "계획형", P: "탐색형",
-                    };
-                    return (
-                      <span key={i} className="px-3 py-1.5 border border-white/15 text-xs font-bold text-white/60">
-                        {letter} · {desc[letter] ?? letter}
-                      </span>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
 
         {isSignedIn ? (
           <>

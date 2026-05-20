@@ -46,7 +46,8 @@
     { "name": "AI / ML", "desc": "Design and train intelligent models" },
     { "name": "Data Analytics", "desc": "Extract insights from data" },
     { "name": "DevOps", "desc": "Automate infrastructure and deployments" },
-    { "name": "Full Stack", "desc": "Build complete apps from front to back" }
+    { "name": "Full Stack", "desc": "Build complete apps from front to back" },
+    { "name": "Game", "desc": "Build games people love to play" }
   ],
   "aiTools": {
     "badge": "AI Tools",

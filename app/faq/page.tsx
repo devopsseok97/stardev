@@ -186,7 +186,7 @@ export default function FAQPage() {
           <h2 className="text-4xl md:text-5xl font-black text-white mb-4 leading-tight">
             여기 없는 질문이<br />있다면?
           </h2>
-          <p className="text-white/40 mb-10">AI가 21가지 질문으로 맞춤 분야를 찾아드려요</p>
+          <p className="text-white/40 mb-10">AI가 20가지 질문으로 맞춤 분야를 찾아드려요</p>
           <button
             onClick={() => router.push("/quiz")}
             className="glow-btn inline-flex items-center gap-2 px-10 py-5 bg-white text-black font-black text-lg hover:bg-gray-100 active:scale-95 transition-all duration-200"

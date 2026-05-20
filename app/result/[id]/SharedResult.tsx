@@ -18,9 +18,6 @@ type Course = { name: string; type: string; description: string; url: string };
 type Result = {
   field: string;
   reason: string;
-  mbtiType?: string | null;
-  mbtiTitle?: string | null;
-  mbtiDesc?: string | null;
   roadmap: RoadmapStep[];
   courses: Course[];
 };
@@ -72,38 +69,6 @@ export default function SharedResult({ result, resultId }: { result: Result; res
           <h1 className="text-4xl font-black mb-4">{result.field}</h1>
           <p className="text-white/90 leading-relaxed">{result.reason}</p>
         </div>
-
-        {/* MBTI 개발자 성향 */}
-        {result.mbtiType && result.mbtiTitle && (
-          <div className="bg-white/5 border border-white/10 p-8">
-            <p className="text-xs uppercase tracking-[0.3em] text-purple-400 mb-2">Developer MBTI</p>
-            <h2 className="text-xl font-black text-white mb-6">개발자 성향 타입</h2>
-            <div className="flex gap-5 items-start">
-              <div className="flex-shrink-0 w-20 h-20 border border-purple-500/40 bg-purple-500/10 flex items-center justify-center">
-                <span className="text-2xl font-black text-white tracking-widest">{result.mbtiType}</span>
-              </div>
-              <div className="flex-1">
-                <p className="text-white font-black text-lg mb-2">{result.mbtiTitle}</p>
-                {result.mbtiDesc && <p className="text-white/50 text-sm leading-relaxed">{result.mbtiDesc}</p>}
-                <div className="flex gap-2 mt-4 flex-wrap">
-                  {result.mbtiType.split("").map((letter, i) => {
-                    const desc: Record<string, string> = {
-                      I: "내향형", E: "외향형",
-                      N: "직관형", S: "현실형",
-                      T: "사고형", F: "감정형",
-                      J: "계획형", P: "탐색형",
-                    };
-                    return (
-                      <span key={i} className="px-2.5 py-1 border border-white/15 text-xs font-bold text-white/60">
-                        {letter} · {desc[letter] ?? letter}
-                      </span>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
 
         {/* 로드맵 */}
         <div className="bg-white/5 border border-white/10 p-8">
@@ -167,7 +132,7 @@ export default function SharedResult({ result, resultId }: { result: Result; res
         {/* 나도 진단받기 CTA */}
         <div className="bg-white/5 border border-white/10 p-8 text-center">
           <p className="text-white font-black text-xl mb-2">나는 어떤 개발자 유형일까?</p>
-          <p className="text-white/40 text-sm mb-6">AI가 21가지 질문으로 맞춤 분야와 로드맵을 알려드려요</p>
+          <p className="text-white/40 text-sm mb-6">AI가 20가지 질문으로 맞춤 분야와 로드맵을 알려드려요</p>
           <button
             onClick={() => router.push("/quiz")}
             className="inline-flex items-center gap-2 px-10 py-4 bg-white text-black font-black text-lg hover:bg-gray-100 active:scale-95 transition-all duration-200"

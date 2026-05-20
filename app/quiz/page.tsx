@@ -10,9 +10,6 @@ type Result = {
   id?: string;
   field: string;
   reason: string;
-  mbtiType?: string | null;
-  mbtiTitle?: string | null;
-  mbtiDesc?: string | null;
   roadmap: { step: number; title: string; duration: string; description: string }[];
   courses: { name: string; type: string; description: string; url: string }[];
 };
