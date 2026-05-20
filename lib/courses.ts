@@ -36,16 +36,22 @@ const COURSES: Record<string, Course[]> = {
   ],
   "백엔드": [
     {
+      name: "자바와 스프링 부트로 생애 최초 서버 만들기",
+      type: "유료",
+      description: "누구나 쉽게 개발부터 배포까지, 서버 개발 입문 올인원 패키지",
+      url: "https://inf.run/vWvUt",
+    },
+    {
       name: "스프링과 JPA 기반 웹 애플리케이션 개발",
       type: "유료",
       description: "국내 백엔드 취업 1위 커리큘럼, 실무 스프링+JPA 완성",
       url: "https://inf.run/MntAj",
     },
     {
-      name: "Salesforce APEX 실무",
-      type: "무료",
-      description: "글로벌 CRM 플랫폼 Salesforce 개발 실무, 무료로 시작",
-      url: "https://inf.run/Druc8",
+      name: "스프링부트를 이용한 웹 프로그래밍",
+      type: "유료",
+      description: "웹사이트가 만들어지는 원리를 이해하며 배우는 스프링 부트",
+      url: "https://inf.run/cKgtB",
     },
   ],
   "AI/ML": [
@@ -76,22 +82,22 @@ const COURSES: Record<string, Course[]> = {
   ],
   "데이터 분석": [
     {
-      name: "인프런 - 파이썬 데이터 분석 실무",
+      name: "데이터 사이언스로 내리는 경영 의사결정 마스터클래스",
       type: "유료",
-      description: "판다스, 시각화, SQL까지 데이터 분석가 취업 코스",
-      url: `https://www.inflearn.com/roadmaps/236${UTM}`,
+      description: "데이터 분석을 실제 비즈니스 의사결정에 적용하는 실전 강의",
+      url: "https://inf.run/atEeA",
     },
     {
-      name: "패스트캠퍼스 - 데이터 분석 부트캠프",
+      name: "빅데이터분석기사 필기 올인원: 3주에 끝내는 완벽 대비",
       type: "유료",
-      description: "3개월 집중 과정, 취업 연계 지원",
-      url: `https://fastcampus.co.kr/data_camp_da${UTM}`,
+      description: "국가공인 빅데이터분석기사 자격증 합격 커리큘럼",
+      url: "https://inf.run/kfqaJ",
     },
     {
-      name: "Google Data Analytics Certificate",
-      type: "유료",
-      description: "구글 공식 데이터 분석 자격증, 링크드인 배지 제공",
-      url: `https://www.coursera.org/professional-certificates/google-data-analytics${UTM}`,
+      name: "엑셀로 배우는 기초통계",
+      type: "무료",
+      description: "데이터 분석의 첫걸음, 엑셀로 쉽게 배우는 통계 기초",
+      url: "https://inf.run/UwiqD",
     },
   ],
   "풀스택": [
@@ -116,22 +122,22 @@ const COURSES: Record<string, Course[]> = {
   ],
   "인프라/DevOps": [
     {
-      name: "Udemy - Docker & Kubernetes 완전정복",
+      name: "데브옵스(DevOps)를 위한 쿠버네티스 마스터",
       type: "유료",
-      description: "글로벌 베스트셀러, 실습 위주 DevOps 강의",
-      url: `https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide${UTM}`,
+      description: "쿠버네티스 핵심 개념부터 실무 운영까지, DevOps 필수 강의",
+      url: "https://inf.run/FDEEV",
     },
     {
-      name: "AWS Skill Builder",
+      name: "AWS 전 직원이 알려주는 AWS 아키텍처 (스타트업 with AWS)",
       type: "유료",
-      description: "AWS 공식 학습 플랫폼, SAA 자격증 준비 최적",
-      url: `https://explore.skillbuilder.aws${UTM}`,
+      description: "스타트업 관점에서 배우는 실전 AWS 인프라 설계",
+      url: "https://inf.run/E9Ug5",
     },
     {
-      name: "Linux Foundation - 무료 강의",
-      type: "무료",
-      description: "리눅스, 쿠버네티스 공식 무료 입문 강의",
-      url: `https://training.linuxfoundation.org/resources/?_sft_content_type=free-course${UTM}`,
+      name: "[DevOps] 빠르고 안전한 배포 파이프라인(CI/CD) 만들기",
+      type: "유료",
+      description: "GitHub Actions, Docker, Kubernetes로 CI/CD 자동화 완성",
+      url: "https://inf.run/jgq39",
     },
   ],
   "게임": [
