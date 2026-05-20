@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import Navbar from "./Navbar";
 import { useLang } from "../context/LangContext";
-import { FrontendIcon, BackendIcon, AIMLIcon, DataIcon, DevOpsIcon, FullstackIcon } from "./FieldIcons";
+import { FrontendIcon, BackendIcon, AIMLIcon, DataIcon, DevOpsIcon, FullstackIcon, GameIcon } from "./FieldIcons";
 import { FIELD_SLUG_MAP } from "../../lib/field-content";
 
 export default function LandingPage() {
@@ -11,7 +11,7 @@ export default function LandingPage() {
   const { lang, t } = useLang();
   const onStart = () => router.push("/quiz");
 
-  const FIELD_ICONS = [FrontendIcon, BackendIcon, AIMLIcon, DataIcon, DevOpsIcon, FullstackIcon];
+  const FIELD_ICONS = [FrontendIcon, BackendIcon, AIMLIcon, DataIcon, DevOpsIcon, FullstackIcon, GameIcon];
 
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden">
@@ -58,7 +58,7 @@ export default function LandingPage() {
 
           <p className="animate-fade-in-up delay-200 text-white/50 text-lg md:text-xl max-w-xl mx-auto leading-relaxed mb-12 whitespace-pre-line">
             {lang === "ko"
-              ? "21가지 질문으로 당신의 강점을 분석하고\nAI가 최적의 개발 분야와 로드맵을 설계해드려요."
+              ? "20가지 질문으로 당신의 강점을 분석하고\nAI가 최적의 개발 분야와 로드맵을 설계해드려요."
               : "21 questions. AI analysis. Your personalized\ndevelopment roadmap — in under 3 minutes."}
           </p>
 
@@ -77,8 +77,8 @@ export default function LandingPage() {
           {/* 분야 태그 */}
           <div className="animate-fade-in-up delay-400 flex flex-wrap justify-center gap-3 mt-16">
             {(lang === "ko"
-              ? ["프론트엔드", "백엔드", "AI / ML", "데이터 분석", "DevOps", "풀스택"]
-              : ["Frontend", "Backend", "AI / ML", "Data Analytics", "DevOps", "Full Stack"]
+              ? ["프론트엔드", "백엔드", "AI / ML", "데이터 분석", "DevOps", "풀스택", "게임"]
+              : ["Frontend", "Backend", "AI / ML", "Data Analytics", "DevOps", "Full Stack", "Game"]
             ).map((f) => {
               const slug = FIELD_SLUG_MAP[f];
               return (
@@ -126,11 +126,12 @@ export default function LandingPage() {
             {t.fields.map((f, i) => {
               const Icon = FIELD_ICONS[i];
               const slug = FIELD_SLUG_MAP[f.name];
+              const isLastAlone = i === t.fields.length - 1 && t.fields.length % 3 !== 0;
               return (
                 <div
                   key={f.name}
                   onClick={() => slug ? router.push(`/field/${slug}`) : onStart()}
-                  className="card-hover bg-black p-8 group cursor-pointer border border-transparent hover:bg-white/5 transition-all duration-300"
+                  className={`card-hover bg-black p-8 group cursor-pointer border border-transparent hover:bg-white/5 transition-all duration-300 ${isLastAlone ? "col-span-2 md:col-span-3" : ""}`}
                 >
                   <div className="w-10 h-10 text-white/20 group-hover:text-purple-400 transition-colors duration-300 mb-5">
                     <Icon className="w-full h-full" />
