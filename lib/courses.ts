@@ -56,22 +56,40 @@ const COURSES: Record<string, Course[]> = {
   ],
   "AI/ML": [
     {
-      name: "패스트캠퍼스 - 딥러닝/NLP 올인원",
+      name: "하이퀄리티 AI 영상 올인원: 미드저니 & 런웨이",
       type: "유료",
-      description: "파이썬부터 LLM까지, 국내 AI 강의 중 가장 넓은 커버리지",
-      url: `https://fastcampus.co.kr/data_online_deep${UTM}`,
+      description: "AI 이미지·영상 생성 툴을 처음부터 끝까지, 크리에이터 필수 강의",
+      url: "https://inf.run/jCVvd",
     },
     {
-      name: "Coursera - Andrew Ng 머신러닝",
+      name: "RAG 성능의 한계를 뚫는 인지 부하 관리 기술",
       type: "유료",
-      description: "전 세계 AI 입문자의 필수 강의, 수료증 제공",
-      url: `https://www.coursera.org/specializations/machine-learning-introduction${UTM}`,
+      description: "LLM 애플리케이션 성능을 극대화하는 RAG 심화 기술",
+      url: "https://inf.run/2CLef",
     },
     {
-      name: "Kaggle Learn",
+      name: "AI 개발팀 운영 + 결제 수익화 웹서비스 런칭",
+      type: "유료",
+      description: "AI로 팀 운영하며 Next.js + 결제 연동까지, 실전 수익화 강의",
+      url: "https://inf.run/5xHbM",
+    },
+    {
+      name: "AI 기반 실전 보안 실습: 취약점 탐지부터 LLM 탈옥까지",
+      type: "유료",
+      description: "AI와 보안을 동시에 배우는 실전 해킹 방어 강의",
+      url: "https://inf.run/VQHXv",
+    },
+    {
+      name: "(기획자를 위한) LLM 애플리케이션 요구사항 분석",
       type: "무료",
-      description: "실전 데이터셋으로 배우는 ML, 무료 수료증",
-      url: `https://www.kaggle.com/learn${UTM}`,
+      description: "LLM 앱 기획·분석 방법론, 무료로 배우는 AI 서비스 설계",
+      url: "https://inf.run/eXRfA",
+    },
+    {
+      name: "바닥부터 만드는 언리얼 에이전트",
+      type: "유료",
+      description: "Agent, Tool, MCP, Skill을 직접 구현하는 AI 에이전트 개발",
+      url: "https://inf.run/ixy9x",
     },
   ],
   "데이터 분석": [
@@ -132,6 +150,26 @@ const COURSES: Record<string, Course[]> = {
       type: "무료",
       description: "리눅스, 쿠버네티스 공식 무료 입문 강의",
       url: `https://training.linuxfoundation.org/resources/?_sft_content_type=free-course${UTM}`,
+    },
+  ],
+  "게임": [
+    {
+      name: "인프런 - Unity 6 온라인 오목 게임 만들기",
+      type: "유료",
+      description: "Unity + C# 서버로 멀티플레이 게임을 처음부터 끝까지 완성하는 실전 강의",
+      url: "https://inf.run/kFHsN",
+    },
+    {
+      name: "Unity Learn (공식)",
+      type: "무료",
+      description: "Unity 공식 튜토리얼. 2D/3D 게임 입문부터 멀티플레이까지 무료 학습 가능",
+      url: "https://learn.unity.com",
+    },
+    {
+      name: "Unreal Engine 공식 학습 포털",
+      type: "무료",
+      description: "Unreal Engine 공식 무료 강의. 블루프린트부터 C++ 게임 개발까지",
+      url: "https://dev.epicgames.com/community/unreal-engine/learning",
     },
   ],
 };
