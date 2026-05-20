@@ -84,3 +84,15 @@ export function FullstackIcon({ className = "" }: { className?: string }) {
     </svg>
   );
 }
+
+export function GameIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14 16 C9 16 6 20 6 26 C6 32 9 36 13 36 C15 36 16 35 17 33 L19 30 L29 30 L31 33 C32 35 33 36 35 36 C39 36 42 32 42 26 C42 20 39 16 34 16 L14 16 Z" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round"/>
+      <line x1="13" y1="23" x2="13" y2="27" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+      <line x1="11" y1="25" x2="15" y2="25" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+      <circle cx="33" cy="23" r="1.8" fill="currentColor"/>
+      <circle cx="36" cy="27" r="1.8" fill="currentColor"/>
+    </svg>
+  );
+}
