@@ -58,7 +58,7 @@ export default function LandingPage() {
 
           <p className="animate-fade-in-up delay-200 text-white/50 text-lg md:text-xl max-w-xl mx-auto leading-relaxed mb-12 whitespace-pre-line">
             {lang === "ko"
-              ? "20가지 질문으로 당신의 강점을 분석하고\nAI가 최적의 개발 분야와 로드맵을 설계해드려요."
+              ? "21가지 질문으로 당신의 강점을 분석하고\nAI가 최적의 개발 분야와 로드맵을 설계해드려요."
               : "21 questions. AI analysis. Your personalized\ndevelopment roadmap — in under 3 minutes."}
           </p>
 

@@ -132,7 +132,7 @@ export default function SharedResult({ result, resultId }: { result: Result; res
         {/* 나도 진단받기 CTA */}
         <div className="bg-white/5 border border-white/10 p-8 text-center">
           <p className="text-white font-black text-xl mb-2">나는 어떤 개발자 유형일까?</p>
-          <p className="text-white/40 text-sm mb-6">AI가 20가지 질문으로 맞춤 분야와 로드맵을 알려드려요</p>
+          <p className="text-white/40 text-sm mb-6">AI가 21가지 질문으로 맞춤 분야와 로드맵을 알려드려요</p>
           <button
             onClick={() => router.push("/quiz")}
             className="inline-flex items-center gap-2 px-10 py-4 bg-white text-black font-black text-lg hover:bg-gray-100 active:scale-95 transition-all duration-200"
