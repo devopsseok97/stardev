@@ -32,15 +32,15 @@ export default function LandingPage() {
           }}
         />
 
-        <div className="relative z-10 w-full max-w-5xl mx-auto px-8 text-center">
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-5 md:px-8 text-center">
           <div className="animate-fade-in-up">
-            <p className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-300 text-xs font-semibold uppercase tracking-widest mb-10">
+            <p className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-300 text-xs font-semibold uppercase tracking-widest mb-6 md:mb-10">
               <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
               {lang === "ko" ? "AI 개발자 적성 진단" : "AI Developer Career Diagnosis"}
             </p>
           </div>
 
-          <h1 className="animate-fade-in-up delay-100 text-6xl md:text-8xl font-black leading-[1.05] tracking-tight mb-8">
+          <h1 className="animate-fade-in-up delay-100 text-5xl md:text-8xl font-black leading-[1.05] tracking-tight mb-6 md:mb-8">
             {lang === "ko" ? (
               <>
                 개발자의 길,<br />
@@ -56,7 +56,7 @@ export default function LandingPage() {
             )}
           </h1>
 
-          <p className="animate-fade-in-up delay-200 text-white/50 text-lg md:text-xl max-w-xl mx-auto leading-relaxed mb-12 whitespace-pre-line">
+          <p className="animate-fade-in-up delay-200 text-white/50 text-base md:text-xl max-w-xl mx-auto leading-relaxed mb-8 md:mb-12 whitespace-pre-line">
             {lang === "ko"
               ? "21가지 질문으로 당신의 강점을 분석하고\nAI가 최적의 개발 분야와 로드맵을 설계해드려요."
               : "21 questions. AI analysis. Your personalized\ndevelopment roadmap — in under 3 minutes."}
