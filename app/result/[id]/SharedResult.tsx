@@ -52,7 +52,7 @@ export default function SharedResult({ result, resultId }: { result: Result; res
   return (
     <div className="min-h-screen bg-black text-white">
       <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-8 py-4 bg-black/80 backdrop-blur-md border-b border-white/10">
-        <span className="text-lg font-black tracking-tight">★ StarDev</span>
+        <button onClick={() => router.push("/")} className="text-lg font-black tracking-tight text-white">★ StarDev</button>
         <button
           onClick={() => router.push("/quiz")}
           className="px-4 py-2 rounded-full border border-white/20 text-gray-300 text-sm font-medium hover:bg-white/10 transition-colors"

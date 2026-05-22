@@ -149,7 +149,7 @@ export default function QuizPage() {
                 ← 이전
               </button>
             )}
-            <span className="text-white font-black text-lg">★ StarDev</span>
+            <button onClick={() => router.push("/")} className="text-white font-black text-lg">★ StarDev</button>
           </div>
           <span className="text-white/30 text-sm">{currentIndex + 1} / {questions.length}</span>
         </div>
