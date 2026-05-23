@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import { Noto_Sans_KR } from "next/font/google";
+import Script from "next/script";
 import { ClerkProvider } from "@clerk/nextjs";
 import { koKR } from "@clerk/localizations";
 import { LangProvider } from "./context/LangContext";
 import "./globals.css";
+
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 const notoSansKR = Noto_Sans_KR({
   weight: ["400", "500", "700", "900"],
@@ -44,6 +47,17 @@ export default function RootLayout({
     <ClerkProvider localization={koKR}>
       <html lang="ko" className={`${notoSansKR.variable} h-full antialiased`}>
         <body className={`min-h-full flex flex-col ${notoSansKR.className}`}>
+          {GA_ID && (
+            <>
+              <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+              <Script id="ga4-init" strategy="afterInteractive">{`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_ID}');
+              `}</Script>
+            </>
+          )}
           <LangProvider>{children}</LangProvider>
         </body>
       </html>

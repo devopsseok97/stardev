@@ -27,6 +27,24 @@ export default function SharedResult({ result, resultId }: { result: Result; res
   const router = useRouter();
   const { isSignedIn } = useUser();
   const [copied, setCopied] = useState(false);
+  const [email, setEmail] = useState("");
+  const [emailStatus, setEmailStatus] = useState<"idle" | "loading" | "done" | "error">("idle");
+
+  const handleEmailSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email.includes("@")) return;
+    setEmailStatus("loading");
+    try {
+      await fetch("/api/waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      setEmailStatus("done");
+    } catch {
+      setEmailStatus("error");
+    }
+  };
 
   const shareUrl = typeof window !== "undefined"
     ? `${window.location.origin}/result/${resultId}`
@@ -182,6 +200,40 @@ export default function SharedResult({ result, resultId }: { result: Result; res
             </div>
           </div>
         )}
+
+        {/* 이메일 수집 */}
+        <div className="bg-purple-950/30 border border-purple-500/20 p-6">
+          <p className="text-xs uppercase tracking-[0.3em] text-purple-400 mb-1">Free Resource</p>
+          <h3 className="text-white font-black text-lg mb-1">
+            {result.field} 로드맵 PDF 받기
+          </h3>
+          <p className="text-white/40 text-sm mb-4">이메일로 맞춤 학습 로드맵과 추천 자료를 보내드려요</p>
+
+          {emailStatus === "done" ? (
+            <div className="flex items-center gap-3 py-3">
+              <span className="text-2xl">✅</span>
+              <p className="text-white font-bold">등록 완료! 곧 메일을 보내드릴게요.</p>
+            </div>
+          ) : (
+            <form onSubmit={handleEmailSubmit} className="flex gap-2">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="이메일 주소 입력"
+                required
+                className="flex-1 min-w-0 px-4 py-3 bg-black/50 border border-white/10 text-white placeholder-white/20 text-sm focus:outline-none focus:border-purple-500/50"
+              />
+              <button
+                type="submit"
+                disabled={emailStatus === "loading"}
+                className="flex-shrink-0 px-5 py-3 bg-purple-600 text-white font-black text-sm hover:bg-purple-700 active:scale-95 transition-all disabled:opacity-50"
+              >
+                {emailStatus === "loading" ? "..." : "받기"}
+              </button>
+            </form>
+          )}
+        </div>
 
         {/* 나도 진단받기 CTA */}
         <div className="bg-white/5 border border-white/10 p-6 text-center">

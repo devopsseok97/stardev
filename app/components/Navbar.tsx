@@ -19,6 +19,7 @@ export default function Navbar() {
     { href: "/ai-tools", label: t.nav.aiTools, desc: lang === "ko" ? "AI 개발 도구 모음" : "AI Dev Tools" },
     { href: "/guidance", label: "Guidance", desc: lang === "ko" ? "분야별 학습 가이드" : "Learning Guide" },
     { href: "/faq", label: "FAQ", desc: lang === "ko" ? "자주 묻는 질문" : "Frequently Asked" },
+    { href: "/community", label: t.nav.community, desc: lang === "ko" ? "개발자 커뮤니티" : "Community" },
   ];
 
   const handleNav = (href: string) => {
