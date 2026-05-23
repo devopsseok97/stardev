@@ -2,23 +2,29 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useAuth, useClerk } from "@clerk/nextjs";
 import { useLang } from "../context/LangContext";
 
 export default function Navbar() {
   const path = usePathname();
+  const router = useRouter();
   const { isSignedIn } = useAuth();
   const { signOut } = useClerk();
   const { lang, t, toggle } = useLang();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const links = [
-    { href: "/", label: t.nav.diagnosis },
-    { href: "/ai-tools", label: t.nav.aiTools },
-    { href: "/guidance", label: "Guidance" },
-    { href: "/faq", label: "FAQ" },
+    { href: "/", label: t.nav.diagnosis, desc: lang === "ko" ? "AI 개발자 적성 진단" : "AI Career Diagnosis" },
+    { href: "/ai-tools", label: t.nav.aiTools, desc: lang === "ko" ? "AI 개발 도구 모음" : "AI Dev Tools" },
+    { href: "/guidance", label: "Guidance", desc: lang === "ko" ? "분야별 학습 가이드" : "Learning Guide" },
+    { href: "/faq", label: "FAQ", desc: lang === "ko" ? "자주 묻는 질문" : "Frequently Asked" },
   ];
+
+  const handleNav = (href: string) => {
+    setMenuOpen(false);
+    router.push(href);
+  };
 
   return (
     <>
@@ -53,7 +59,7 @@ export default function Navbar() {
 
             <Link
               href="/quiz"
-              className="px-4 md:px-6 py-2 rounded-full bg-white text-black text-sm font-black hover:bg-gray-100 transition-colors"
+              className="hidden md:inline-flex px-6 py-2 rounded-full bg-white text-black text-sm font-black hover:bg-gray-100 transition-colors"
             >
               {isSignedIn ? t.nav.quizBtn : t.nav.startBtn}
             </Link>
@@ -70,41 +76,76 @@ export default function Navbar() {
             {/* 햄버거 버튼 */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="md:hidden flex flex-col gap-1.5 p-1.5"
+              className="md:hidden w-9 h-9 flex flex-col items-center justify-center gap-1.5"
+              aria-label="메뉴"
             >
-              <span className={`block w-5 h-0.5 bg-white/70 transition-all duration-200 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
-              <span className={`block w-5 h-0.5 bg-white/70 transition-all duration-200 ${menuOpen ? "opacity-0" : ""}`} />
-              <span className={`block w-5 h-0.5 bg-white/70 transition-all duration-200 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+              <span className={`block w-5 h-0.5 bg-white transition-all duration-300 origin-center ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
+              <span className={`block w-5 h-0.5 bg-white transition-all duration-300 ${menuOpen ? "opacity-0 scale-x-0" : ""}`} />
+              <span className={`block w-5 h-0.5 bg-white transition-all duration-300 origin-center ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
             </button>
           </div>
         </div>
-
-        {/* 모바일 드롭다운 메뉴 */}
-        {menuOpen && (
-          <div className="md:hidden border-t border-white/10 bg-black/95">
-            {links.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                onClick={() => setMenuOpen(false)}
-                className={`block px-6 py-4 text-sm font-medium border-b border-white/5 transition-colors ${
-                  path === l.href ? "text-white bg-white/5" : "text-white/50 hover:text-white hover:bg-white/5"
-                }`}
-              >
-                {l.label}
-              </Link>
-            ))}
-            {isSignedIn && (
-              <button
-                onClick={() => { signOut({ redirectUrl: "/" }); setMenuOpen(false); }}
-                className="w-full text-left px-6 py-4 text-sm text-white/30 hover:text-white/60 transition-colors"
-              >
-                {t.nav.logout}
-              </button>
-            )}
-          </div>
-        )}
       </nav>
+
+      {/* 모바일 풀스크린 메뉴 */}
+      <div className={`fixed inset-0 z-40 md:hidden transition-all duration-300 ${menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
+        {/* 배경 오버레이 */}
+        <div className="absolute inset-0 bg-black/95 backdrop-blur-xl" onClick={() => setMenuOpen(false)} />
+
+        {/* 메뉴 컨텐츠 */}
+        <div className={`absolute inset-0 flex flex-col pt-20 px-6 pb-10 transition-all duration-300 ${menuOpen ? "translate-y-0" : "-translate-y-4"}`}>
+
+          {/* 메뉴 링크 */}
+          <div className="flex-1 space-y-1 pt-4">
+            {links.map((l, i) => (
+              <button
+                key={l.href}
+                onClick={() => handleNav(l.href)}
+                className={`w-full text-left px-5 py-4 rounded-xl transition-all duration-200 flex items-center justify-between group ${
+                  path === l.href
+                    ? "bg-white/10 text-white"
+                    : "text-white/60 hover:bg-white/5 hover:text-white"
+                }`}
+                style={{ transitionDelay: menuOpen ? `${i * 50}ms` : "0ms" }}
+              >
+                <div>
+                  <p className="font-black text-lg">{l.label}</p>
+                  <p className="text-xs text-white/30 mt-0.5">{l.desc}</p>
+                </div>
+                <span className="text-white/20 group-hover:text-purple-400 transition-colors text-xl">→</span>
+              </button>
+            ))}
+          </div>
+
+          {/* 하단 버튼들 */}
+          <div className="space-y-3">
+            <button
+              onClick={() => handleNav("/quiz")}
+              className="w-full py-4 bg-white text-black font-black text-lg rounded-xl hover:bg-gray-100 active:scale-95 transition-all"
+            >
+              {isSignedIn ? t.nav.quizBtn : (lang === "ko" ? "무료로 진단받기 →" : "Start Free →")}
+            </button>
+
+            <div className="flex items-center justify-between px-1">
+              <button
+                onClick={toggle}
+                className="text-white/40 text-sm font-medium hover:text-white transition-colors"
+              >
+                {lang === "ko" ? "🌐 English" : "🌐 한국어"}
+              </button>
+
+              {isSignedIn && (
+                <button
+                  onClick={() => { signOut({ redirectUrl: "/" }); setMenuOpen(false); }}
+                  className="text-white/30 text-sm hover:text-white/60 transition-colors"
+                >
+                  {t.nav.logout}
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
