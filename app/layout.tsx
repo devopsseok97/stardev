@@ -16,7 +16,7 @@ const notoSansKR = Noto_Sans_KR({
 
 export const metadata: Metadata = {
   title: "StarDev · AI 개발자 적성 진단",
-  description: "20가지 질문으로 나에게 맞는 개발 분야와 학습 로드맵을 AI가 찾아드려요. 프론트엔드, 백엔드, AI/ML, 데이터 분석, DevOps 중 나에게 딱 맞는 길을 무료로 진단받으세요.",
+  description: "20가지 질문으로 나에게 맞는 개발 분야와 학습 로드맵을 AI가 찾아드려요. 프론트엔드, 백엔드, AI/ML, 데이터 분석, DevOps, 게임 중 나에게 딱 맞는 길을 무료로 진단받으세요.",
   keywords: ["개발자 적성 진단", "AI 개발자", "프론트엔드", "백엔드", "AI ML", "코딩 적성", "개발 로드맵", "StarDev"],
   authors: [{ name: "StarDev" }],
   openGraph: {

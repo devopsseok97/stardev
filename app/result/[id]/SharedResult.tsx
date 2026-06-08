@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useUser, SignInButton } from "@clerk/nextjs";
+import Navbar from "@/app/components/Navbar";
 
 const FIELD_ICONS: Record<string, string> = {
   "프론트엔드": "🎨",
@@ -69,17 +70,9 @@ export default function SharedResult({ result, resultId }: { result: Result; res
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-8 py-4 bg-black/80 backdrop-blur-md border-b border-white/10">
-        <button onClick={() => router.push("/")} className="text-lg font-black tracking-tight text-white">★ StarDev</button>
-        <button
-          onClick={() => router.push("/quiz")}
-          className="px-4 py-2 rounded-full border border-white/20 text-gray-300 text-sm font-medium hover:bg-white/10 transition-colors"
-        >
-          나도 진단받기
-        </button>
-      </div>
+      <Navbar />
 
-      <div className="max-w-2xl mx-auto space-y-px pt-16 pb-12 px-4 md:px-6">
+      <div className="max-w-2xl mx-auto space-y-px pt-20 pb-12 px-4 md:px-6">
 
         {/* 결과 헤더 */}
         <div className="bg-white/5 border border-white/10 p-6 text-center">
@@ -238,7 +231,7 @@ export default function SharedResult({ result, resultId }: { result: Result; res
         {/* 나도 진단받기 CTA */}
         <div className="bg-white/5 border border-white/10 p-6 text-center">
           <p className="text-white font-black text-lg mb-2">나는 어떤 개발자 유형일까?</p>
-          <p className="text-white/40 text-sm mb-5">AI가 21가지 질문으로 맞춤 분야와 로드맵을 알려드려요</p>
+          <p className="text-white/40 text-sm mb-5">AI가 20가지 질문으로 맞춤 분야와 로드맵을 알려드려요</p>
           <button
             onClick={() => router.push("/quiz")}
             className="inline-flex items-center gap-2 px-8 py-3.5 bg-white text-black font-black text-base hover:bg-gray-100 active:scale-95 transition-all duration-200"

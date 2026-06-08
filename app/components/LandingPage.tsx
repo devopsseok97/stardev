@@ -58,8 +58,8 @@ export default function LandingPage() {
 
           <p className="animate-fade-in-up delay-200 text-white/50 text-base md:text-xl max-w-xl mx-auto leading-relaxed mb-8 md:mb-12 whitespace-pre-line">
             {lang === "ko"
-              ? "21가지 질문으로 당신의 강점을 분석하고\nAI가 최적의 개발 분야와 로드맵을 설계해드려요."
-              : "21 questions. AI analysis. Your personalized\ndevelopment roadmap — in under 3 minutes."}
+              ? "20가지 질문으로 당신의 강점을 분석하고\nAI가 최적의 개발 분야와 로드맵을 설계해드려요."
+              : "20 questions. AI analysis. Your personalized\ndevelopment roadmap — in under 3 minutes."}
           </p>
 
           <div className="animate-fade-in-up delay-300 flex flex-col items-center gap-4">
@@ -70,7 +70,7 @@ export default function LandingPage() {
               {lang === "ko" ? "무료로 진단받기 →" : "Start Free Diagnosis →"}
             </button>
             <p className="text-white/20 text-xs">
-              {lang === "ko" ? "완전 무료 · 2분 소요 · 회원가입 불필요" : "Free · 2 min · No sign-up required"}
+              {lang === "ko" ? "완전 무료 · 2분 소요 · 간편 로그인으로 전체 결과 확인" : "Free · 2 min · Quick login to unlock full results"}
             </p>
           </div>
 

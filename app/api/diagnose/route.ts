@@ -1,6 +1,27 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { NextRequest, NextResponse } from "next/server";
 import { getCoursesByField } from "@/lib/courses";
+import { supabaseAdmin } from "@/lib/supabase-admin";
+
+const ALLOWED_ORIGINS = [
+  /^http:\/\/localhost(:\d+)?$/,
+  /^https:\/\/[^.]+\.apps\.tossmini\.com$/,
+  /^https:\/\/stardev\.kr$/,
+];
+
+function corsHeaders(origin: string | null) {
+  const allowed = origin && ALLOWED_ORIGINS.some((r) => r.test(origin));
+  return {
+    "Access-Control-Allow-Origin": allowed ? origin! : "",
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+  };
+}
+
+export async function OPTIONS(req: NextRequest) {
+  const origin = req.headers.get("origin");
+  return new NextResponse(null, { status: 204, headers: corsHeaders(origin) });
+}
 
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
@@ -31,6 +52,9 @@ const SYSTEM_PROMPT = `당신은 개발자 커리어 전문 상담사입니다. 
 }`;
 
 export async function POST(req: NextRequest) {
+  const origin = req.headers.get("origin");
+  const cors = corsHeaders(origin);
+
   try {
     const { answers } = await req.json();
 
@@ -68,31 +92,24 @@ export async function POST(req: NextRequest) {
 
     // Supabase 저장 (실패해도 결과는 반환)
     try {
-      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-      const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+      const { data, error } = await supabaseAdmin
+        .from("results")
+        .insert(result)
+        .select("id")
+        .single();
 
-      if (supabaseUrl && supabaseKey) {
-        const { createClient } = await import("@supabase/supabase-js");
-        const supabaseAdmin = createClient(supabaseUrl, supabaseKey);
-        const { data, error } = await supabaseAdmin
-          .from("results")
-          .insert(result)
-          .select("id")
-          .single();
-
-        if (!error && data?.id) {
-          return NextResponse.json({ ...result, id: data.id });
-        }
-        if (error) console.error("Supabase 저장 오류:", error.message);
+      if (!error && data?.id) {
+        return NextResponse.json({ ...result, id: data.id }, { headers: cors });
       }
+      if (error) console.error("Supabase 저장 오류:", error.message);
     } catch (dbErr) {
-      console.error("Supabase 초기화 오류:", dbErr);
+      console.error("Supabase 저장 오류:", dbErr);
     }
 
-    return NextResponse.json(result);
+    return NextResponse.json(result, { headers: cors });
   } catch (error: unknown) {
     const message = error instanceof Error ? error.message : String(error);
     console.error("API 오류 상세:", message);
-    return NextResponse.json({ error: message }, { status: 500 });
+    return NextResponse.json({ error: message }, { status: 500, headers: cors });
   }
 }

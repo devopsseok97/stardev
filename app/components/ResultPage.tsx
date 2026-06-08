@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useUser, SignInButton } from "@clerk/nextjs";
 import Link from "next/link";
+import Navbar from "./Navbar";
 
 type RoadmapStep = {
   step: number;
@@ -81,16 +82,7 @@ export default function ResultPage({
 
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* Navbar */}
-      <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-10 py-4 bg-black/90 backdrop-blur-md border-b border-white/10">
-        <Link href="/" className="text-lg font-black tracking-tight text-white">★ StarDev</Link>
-        <button
-          onClick={onRestart}
-          className="px-4 md:px-6 py-2 rounded-full border border-white/20 text-white/50 text-sm font-medium hover:text-white hover:border-white/50 transition-all"
-        >
-          다시 진단하기
-        </button>
-      </div>
+      <Navbar />
 
       <div className="max-w-3xl mx-auto pt-20 pb-16 px-4 md:pt-28 md:pb-20 md:px-8 space-y-px">
 

@@ -163,5 +163,6 @@ const COURSES: Record<string, Course[]> = {
 };
 
 export function getCoursesByField(field: string): Course[] {
-  return COURSES[field] ?? COURSES["풀스택"];
+  const courses = COURSES[field] ?? COURSES["풀스택"];
+  return courses.map((c) => ({ ...c, url: c.url + UTM }));
 }

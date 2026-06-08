@@ -8,12 +8,18 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "유효하지 않은 이메일" }, { status: 400 });
     }
 
-    await supabaseAdmin
+    const { error } = await supabaseAdmin
       .from("waitlist")
       .upsert({ email: email.toLowerCase().trim() }, { onConflict: "email" });
 
+    if (error) {
+      console.error("Waitlist 저장 오류:", error.message);
+      return NextResponse.json({ error: "저장 실패" }, { status: 500 });
+    }
+
     return NextResponse.json({ ok: true });
-  } catch {
-    return NextResponse.json({ ok: true });
+  } catch (err) {
+    console.error("Waitlist API 오류:", err);
+    return NextResponse.json({ error: "서버 오류" }, { status: 500 });
   }
 }
